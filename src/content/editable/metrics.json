@@ -1,0 +1,81 @@
+{
+  "_help": "Figures shown on screen. Keep every number faithful to the source document. Text in {curly braces} is filled in automatically.",
+  "revenueExposure": {
+    "value": 3.54,
+    "prefix": "$",
+    "decimals": 2,
+    "unit": "billion",
+    "label": "Potential revenue exposure",
+    "qualifier": "At risk if any gap opens from prospect to cash. Based on the figures provided; not a forecast of loss."
+  },
+  "comparableEstate": [
+    {
+      "value": 1400,
+      "label": "order workflows"
+    },
+    {
+      "value": 600,
+      "label": "pricing rules"
+    }
+  ],
+  "discoveryGap": {
+    "planned": {
+      "weeks": 5,
+      "label": "Weeks planned for requirements"
+    },
+    "needed": {
+      "weeks": 12,
+      "label": "Weeks the workshops needed"
+    },
+    "gap": {
+      "weeks": 7,
+      "label": "weeks that did not exist"
+    }
+  },
+  "proofOfConcept": {
+    "metrics": [
+      {
+        "value": 150,
+        "label": "workflows"
+      },
+      {
+        "value": 60,
+        "label": "rate plans"
+      }
+    ],
+    "acceptance": {
+      "value": "8 in 10",
+      "label": "drafts accepted with light edits"
+    }
+  },
+  "discoveryResult": {
+    "before": {
+      "weeks": 12,
+      "label": "Discovery the workshops needed"
+    },
+    "after": {
+      "weeks": 5,
+      "label": "Discovery with GenWizard"
+    },
+    "summary": "Five weeks, not twelve.",
+    "note": "Hidden rules surfaced in month one instead of at user testing."
+  },
+  "comparableTransformation": [
+    {
+      "value": "1,000+",
+      "label": "users"
+    },
+    {
+      "value": "APAC · EMEA · US",
+      "label": "regions"
+    },
+    {
+      "value": "16-week",
+      "label": "progressive releases"
+    },
+    {
+      "value": "18-month",
+      "label": "rollout"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "_help": "Team members. 'image' is a file inside the public folder (for example team/mayank-jain.png). Do not change 'id'. objectPosition moves the photo crop: first % = left/right, second % = up/down.",
+  "members": [
+    {
+      "id": "mayank",
+      "name": "Mayank Jain",
+      "shortName": "Mayank",
+      "role": "CAL",
+      "chapter": "Context",
+      "image": "team/mayank-jain.png",
+      "objectPosition": "50% 20%",
+      "objectPositionTight": "50% 30%",
+      "shortIntroduction": "Opens the conversation: what is at stake, and what matters most to Meridian."
+    },
+    {
+      "id": "sushant",
+      "name": "Sushant",
+      "shortName": "Sushant",
+      "role": "ATCI Delivery and Innovation Lead",
+      "chapter": "Innovation",
+      "image": "team/sushant.png",
+      "objectPosition": "42% 18%",
+      "objectPositionTight": "40% 28%",
+      "shortIntroduction": "Shows how AI-led delivery with GenWizard and myWizard can de-risk and accelerate the program."
+    },
+    {
+      "id": "neeti",
+      "name": "Neeti Bourai",
+      "shortName": "Neeti",
+      "role": "Delivery Manager",
+      "chapter": "Value",
+      "image": "team/neeti-bourai.jpg",
+      "objectPosition": "52% 18%",
+      "objectPositionTight": "53% 32%",
+      "shortIntroduction": "Leads a peer telco program and shares how a very similar challenge was solved."
+    },
+    {
+      "id": "suryakanta",
+      "name": "Suryakanta Das",
+      "shortName": "Suryakanta",
+      "role": "CMT Market Lead",
+      "chapter": "Why Accenture",
+      "image": "team/suryakanta-das.jpg",
+      "objectPosition": "45% 8%",
+      "objectPositionTight": "45% 20%",
+      "shortIntroduction": "Brings it together: why Accenture, and why now."
+    },
+    {
+      "id": "aryama",
+      "name": "Aryama Das",
+      "shortName": "Aryama",
+      "role": "Senior Delivery Manager",
+      "chapter": "Q&A",
+      "image": "team/aryama-das.jpg",
+      "objectPosition": "36% 18%",
+      "objectPositionTight": "36% 32%",
+      "shortIntroduction": "Facilitates the discussion and makes room for your questions and concerns."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "_help": "The four chapters, in speaking order. 'speakerId' must be one of the ids in team.json.",
+  "chapters": [
+    {
+      "id": "context",
+      "number": "01",
+      "sourceTopic": "1. Context Setting",
+      "title": "A New Prime Meridian",
+      "subtitle": "One brand, one platform, and every customer carried across by June 2027",
+      "speakerId": "mayank",
+      "duration": "about 3 min 25 sec",
+      "durationSeconds": 205,
+      "outcome": "Why the next six months decide whether customer trust carries over.",
+      "navLabel": "Context"
+    },
+    {
+      "id": "innovation",
+      "number": "02",
+      "sourceTopic": "2. Innovation Story",
+      "title": "The Ghost in the Siebel Estate",
+      "subtitle": "How GenWizard and myWizard find hidden rules before they find your customers",
+      "speakerId": "sushant",
+      "duration": "about 3 min",
+      "durationSeconds": 180,
+      "outcome": "The tools do the reading. Your experts do the judging.",
+      "navLabel": "Innovation"
+    },
+    {
+      "id": "value",
+      "number": "03",
+      "sourceTopic": "3. Value Story",
+      "title": "The Real Question Is June 28",
+      "subtitle": "How one control tower and early-validation releases protect customers now and open up what Meridian can do next",
+      "screenSubtitle": "One control tower and early-validation releases: protect customers now, open up what comes next",
+      "speakerId": "neeti",
+      "duration": "about 4 min",
+      "durationSeconds": 240,
+      "outcome": "Validate early, learn quickly and scale with confidence.",
+      "navLabel": "Value"
+    },
+    {
+      "id": "why-accenture",
+      "number": "04",
+      "sourceTopic": "4. Why Accenture, and Why Now",
+      "title": "Chart the Course Before You Sail",
+      "subtitle": "A focused initial assessment to expose the risks and validate the plan for your six-month move to the EGW brand",
+      "speakerId": "suryakanta",
+      "duration": "about 2 min 30 sec",
+      "durationSeconds": 150,
+      "outcome": "Expose the risks and validate the plan before committing to the detailed roadmap.",
+      "navLabel": "Why Accenture"
+    }
+  ]
+}

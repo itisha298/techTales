@@ -1,0 +1,366 @@
+{
+  "_help": "Main on-screen text. Text in {curly braces} is filled in automatically, e.g. {goLive}, {assessmentDuration}, {teamName}, {tom}, {john}. A capital letter, e.g. {ProofOfConceptDuration}, capitalises the first letter.",
+  "experience": {
+    "documentTitle": "Meridian Telecom — A New Prime Meridian",
+    "brand": "Meridian Telecom",
+    "title": "A New Prime Meridian",
+    "subtitle": "One brand, one platform, and every customer carried across by June 2027",
+    "disclaimer": "Hypothetical scenarios, figures and dates for illustrative discussion.",
+    "presentedBy": "Accenture",
+    "teamName": "Meridian Wizards"
+  },
+  "settings": {
+    "assessmentDuration": "two-week",
+    "proofOfConceptDuration": "two-week",
+    "goLive": "June 2027"
+  },
+  "client": {
+    "name": "Meridian",
+    "fullName": "Meridian Telecom",
+    "tom": "Tom",
+    "john": "John"
+  },
+  "scenes": {
+    "opening": {
+      "navLabel": "Opening",
+      "railLabel": "Opening",
+      "speakerId": "mayank",
+      "plannedSeconds": 45,
+      "centralMessage": "A New Prime Meridian",
+      "visualTreatment": "Pre-show cover. A purple meridian line draws across faint coordinate arcs."
+    },
+    "journey": {
+      "navLabel": "The journey",
+      "railLabel": "The journey",
+      "speakerId": "mayank",
+      "plannedSeconds": 50,
+      "centralMessage": "Four chapters, one simple next step.",
+      "visualTreatment": "Editorial journey: large chapter numbers on a line that builds left to right."
+    },
+    "context": {
+      "navLabel": "Context and stakes",
+      "speakerId": "mayank",
+      "plannedSeconds": 110,
+      "centralMessage": "Protect the trust already earned.",
+      "visualTreatment": "Horizontal six-month timeline into June 2027; hero exposure figure."
+    },
+    "innovation-challenge": {
+      "navLabel": "The hidden-rule challenge",
+      "speakerId": "sushant",
+      "plannedSeconds": 95,
+      "centralMessage": "Every legacy estate has rules no one remembers writing.",
+      "visualTreatment": "Abstract legacy estate: faint workflow paths, hidden nodes surfacing, a rule decoded."
+    },
+    "innovation-solution": {
+      "navLabel": "AI-led discovery",
+      "speakerId": "sushant",
+      "plannedSeconds": 85,
+      "centralMessage": "The tools do the reading. Your experts do the judging.",
+      "visualTreatment": "Seven-step discovery flow ending in human review; discovery bars 12 → 5 weeks."
+    },
+    "value": {
+      "navLabel": "The value story",
+      "speakerId": "neeti",
+      "plannedSeconds": 150,
+      "centralMessage": "Do not make customers choose between continuity and progress.",
+      "visualTreatment": "Prospect-to-cash lanes with a control-tower pulse; credentials strip; Value 360."
+    },
+    "june-28": {
+      "navLabel": "June 28",
+      "speakerId": "neeti",
+      "plannedSeconds": 90,
+      "centralMessage": "What becomes possible the day after go-live.",
+      "visualTreatment": "Go-live date, then a diagonal purple wipe into the next chapter (presenter-triggered)."
+    },
+    "assessment": {
+      "navLabel": "Why Accenture",
+      "speakerId": "suryakanta",
+      "plannedSeconds": 120,
+      "centralMessage": "Chart the course before you sail.",
+      "visualTreatment": "Four reasons on thin rules; the assessment as a seven-waypoint route."
+    },
+    "team": {
+      "navLabel": "Meet the team",
+      "railLabel": "The team",
+      "speakerId": "suryakanta",
+      "plannedSeconds": 15,
+      "centralMessage": "The team behind the conversation.",
+      "visualTreatment": "Editorial photo composition with varied proportions and diagonal reveals."
+    },
+    "qa": {
+      "navLabel": "Executive ask and Q&A",
+      "railLabel": "Ask and Q&A",
+      "speakerId": "aryama",
+      "plannedSeconds": 440,
+      "centralMessage": "Would you be comfortable sponsoring the initial assessment?",
+      "visualTreatment": "The ask, then a calm purple Q&A screen with Aryama.",
+      "stepSpeakers": [
+        "suryakanta",
+        "aryama"
+      ]
+    }
+  },
+  "screens": {
+    "opening": {
+      "label": "Executive conversation",
+      "cta": "Enter experience",
+      "hint": "Press → or Space to begin",
+      "hintTouch": "Swipe left to begin",
+      "teamLabel": "Presented by"
+    },
+    "journey": {
+      "eyebrow": "How we will use the time",
+      "headline": "Four chapters. One simple next step.",
+      "closing": {
+        "label": "Then",
+        "title": "Your questions",
+        "detail": "Q&A and discussion"
+      },
+      "nextStep": "The next step we hope to agree: an initial assessment with you and your key stakeholders."
+    },
+    "context": {
+      "eyebrow": "Context and stakes",
+      "headline": "Protect the trust already earned.",
+      "lead": "Over the next six months, as mobility moves into the EGW sub-brand, that trust either carries over or it is at risk.",
+      "timeline": {
+        "start": "Today",
+        "end": "{goLive}",
+        "endLabel": "Go-live · contractual commitment",
+        "span": "Roughly six months"
+      },
+      "workstreams": [
+        {
+          "title": "Corporate mobile brand retires",
+          "detail": "All mobility moves into the EGW sub-brand"
+        },
+        {
+          "title": "A new Salesforce platform",
+          "detail": "CRM, assisted ordering and self-service, built from the ground up"
+        },
+        {
+          "title": "Integrated with the estate",
+          "detail": "Siebel · Oracle · BRM"
+        }
+      ],
+      "priorities": [
+        {
+          "who": "{john}",
+          "title": "Zero disruption",
+          "detail": "Green SLAs across every vendor"
+        },
+        {
+          "who": "{tom}",
+          "title": "A next-gen platform",
+          "detail": "Aligned to Meridian's future business model"
+        }
+      ]
+    },
+    "challenge": {
+      "eyebrow": "The Ghost in the Siebel Estate",
+      "headline": "Every legacy estate has rules no one remembers writing.",
+      "lead": "Every week spent working out what the old system does is a week taken from building and testing the new one.",
+      "story": {
+        "label": "A comparable story",
+        "who": "Large Asia-Pacific mobile operator",
+        "context": "26 weeks to replace Siebel ordering and care with Salesforce. Three vendors."
+      },
+      "hiddenRule": {
+        "tag": "Illustrative fragment",
+        "code": "IF seg_cd IN (…) AND plan_ovr = 1 → apply DISC_07",
+        "plain": "An undocumented discount, found by accident in week three",
+        "impact": "Would have mispriced 50,000 customers"
+      },
+      "fragments": [
+        "wf_order_validate_v3",
+        "rate_ovr()",
+        "BRM.price.tier",
+        "sbl_rule_214",
+        "acct.seg_cd",
+        "disc_chain[]"
+      ]
+    },
+    "solution": {
+      "eyebrow": "GenWizard · myWizard",
+      "headline": "The tools do the reading. Your experts do the judging.",
+      "flow": [
+        "Siebel and BRM configuration",
+        "GenWizard analysis",
+        "Plain-language rule",
+        "Source traceability",
+        "Proposed Salesforce configuration",
+        "Test case",
+        "Human review"
+      ],
+      "human": {
+        "title": "Human review",
+        "statement": "Experts accepted, edited or rejected every draft.",
+        "actions": [
+          "Accept",
+          "Edit",
+          "Reject"
+        ],
+        "decision": "The AI decided nothing. The operator's own Siebel architect chose which rules to keep, change or retire."
+      },
+      "poc": {
+        "label": "{ProofOfConceptDuration} proof of concept · comparable story"
+      },
+      "controlTower": {
+        "name": "myWizard",
+        "label": "One control tower across all three vendors"
+      },
+      "ask": "Proposed for Meridian: a {proofOfConceptDuration} proof of concept on a sample of the estate, inside your environment."
+    },
+    "value": {
+      "eyebrow": "The Real Question Is June 28",
+      "headline": "Do not make customers choose between continuity and progress.",
+      "journey": {
+        "start": "Prospect",
+        "end": "Cash",
+        "label": "One digitally enabled prospect-to-cash experience"
+      },
+      "layers": [
+        "Customer journeys",
+        "Releases",
+        "Dependencies",
+        "Migration",
+        "Quality",
+        "SLA risk"
+      ],
+      "controlTower": "One transformation control tower · a common view",
+      "credentials": {
+        "label": "A comparable Salesforce transformation"
+      },
+      "lesson": "Validate early, learn quickly and scale with confidence.",
+      "value360": {
+        "title": "Value 360",
+        "quadrants": [
+          "Client Value",
+          "Technology and Innovation",
+          "Talent and People",
+          "Sustainability"
+        ]
+      }
+    },
+    "june28": {
+      "eyebrow": "The Real Question Is June 28",
+      "before": {
+        "date": "{goLive}",
+        "label": "Go-live"
+      },
+      "setup": "The question is not only whether Meridian can go live by {goLive}.",
+      "question": "The real question is what becomes possible the day after.",
+      "after": {
+        "label": "The next chapter"
+      },
+      "outcomes": [
+        "Customers protected",
+        "Employees empowered",
+        "Risks controlled",
+        "Digital self-service expanded",
+        "A scalable platform",
+        "Future innovation enabled"
+      ],
+      "closing": "Let's prove what matters most, early."
+    },
+    "assessment": {
+      "eyebrow": "Why Accenture, and why now",
+      "headline": "Chart the course before you sail.",
+      "commitment": "Transition all mobility operations into the EGW brand within six months, while protecting customer relationships, maintaining service continuity and building a platform for future growth.",
+      "reasons": [
+        "Execution discipline",
+        "Structured governance",
+        "Integration focus",
+        "Collaborative delivery"
+      ],
+      "routeTitle": "A focused {assessmentDuration} initial assessment",
+      "steps": [
+        "Align the scope",
+        "Nominate stakeholders",
+        "Identify critical journeys",
+        "Validate assumptions",
+        "Expose dependencies and risks",
+        "Define the early-validation release",
+        "Produce the high-level roadmap"
+      ],
+      "closing": "A controlled, evidence-based path to the six-month ambition."
+    },
+    "team": {
+      "eyebrow": "The team",
+      "headline": "Meet the {teamName}",
+      "subtitle": "The minds behind the transformation."
+    },
+    "ask": {
+      "eyebrow": "The executive ask",
+      "question": "Would you be comfortable sponsoring the initial assessment?",
+      "outcomes": [
+        "Prioritized risks and dependencies",
+        "Validated planning assumptions",
+        "A clear immediate roadmap"
+      ],
+      "actions": {
+        "explore": "Explore the assessment",
+        "qa": "Open Q&A",
+        "back": "Back to the ask"
+      },
+      "qa": {
+        "eyebrow": "Questions and discussion",
+        "message": "Let’s discuss what matters most to Meridian."
+      },
+      "detail": {
+        "title": "Focused {assessmentDuration} initial assessment",
+        "purpose": "Identify the critical risks early, validate the key assumptions, and give you a realistic, evidence-based path.",
+        "participants": {
+          "label": "Who takes part",
+          "items": [
+            "Business",
+            "Architecture",
+            "Security",
+            "Data",
+            "Operations",
+            "Delivery",
+            "Key vendors"
+          ]
+        },
+        "outputs": {
+          "label": "What you will have at the end",
+          "items": [
+            "A prioritized view of the risks and dependencies",
+            "A validated set of planning assumptions",
+            "A high-level delivery roadmap",
+            "Clear recommendations on the immediate next steps"
+          ]
+        },
+        "nextSteps": {
+          "label": "To begin",
+          "items": [
+            "Align on the assessment scope",
+            "Nominate the right business and technology stakeholders",
+            "Agree the assessment window with clearly defined outputs"
+          ]
+        }
+      }
+    }
+  },
+  "pendingConfirmations": [
+    {
+      "topic": "Assessment duration",
+      "current": "Shown as \"{assessmentDuration}\"",
+      "where": "settings.assessmentDuration in src/content/editable/presentation.json"
+    },
+    {
+      "topic": "Client stakeholder names",
+      "current": "Shown as {tom} and {john}",
+      "where": "client in src/content/editable/presentation.json"
+    },
+    {
+      "topic": "Speaker name spelling",
+      "current": "Shown as Suryakanta Das (document says Suryakant)",
+      "where": "src/content/editable/team.json"
+    },
+    {
+      "topic": "Meaning of June 28",
+      "current": "Shown only as a future-state idea, not a date",
+      "where": "screens.june28 in src/content/editable/presentation.json"
+    }
+  ]
+}
