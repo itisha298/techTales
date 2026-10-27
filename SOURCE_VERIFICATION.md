@@ -18,7 +18,7 @@ The document itself says: *"All scenarios, figures and dates in the stories are 
 | June 28 presented as a future-state idea, not a contractual date | ✅ Shown as "The day after" and "The next chapter". It is never given as a date. |
 | Disclaimer visible | ✅ Bottom rail on every scene, and in the assessment panel. |
 | Team names and roles match the configured team data | ✅ Every portrait, badge and caption reads from `src/content/editable/team.json` (via `src/data/team.ts`). |
-| Speaker roles | ⚠️ **Team-provided, not from the source.** The roles were supplied by the team (CAL; ATCI Delivery and Innovation Lead; Delivery Manager; CMT Market Lead; Senior Delivery Manager) and differ from the speech document's wording. The verbatim speeches still use the source wording. |
+| Speaker roles | ⚠️ **Team-provided, not from the source.** The roles were supplied by the team (Meridian CAL; ATCI Delivery and Innovation Lead; Delivery Manager; CMT Market Lead; Senior Delivery Manager) and differ from the speech document's wording. The verbatim speeches still use the source wording. |
 | Audience UI does not expose full speeches | ✅ Speeches appear only in the presenter notes panel (press N). A test checks that no speech paragraph appears in the audience content. |
 | Visual consistency | ✅ All scenes share the same tokens, type scale, eyebrow, rail and speaker badge. Layout checked at 1920×1080, 1600×900, 1366×768, 1280×720, 1024×768, 768×1024 and 390×844. |
 
@@ -49,7 +49,7 @@ The document itself says: *"All scenarios, figures and dates in the stories are 
 | 02 outcome: "The tools do the reading. Your experts do the judging." | Sushant (verbatim) |
 | 03 outcome: "Validate early, learn quickly and scale with confidence." | Neeti (verbatim) |
 | 04 outcome: "Expose the risks and validate the plan before committing to the detailed roadmap." | *Shortened* from the Topic 4 subtitle and "before we commit to the detailed execution roadmap" |
-| "Then · Your questions · Aryama Das · Q&A and discussion" | "Aryama … will make sure we leave plenty of room for your questions and concerns." |
+| "Then · Your questions · Aryama Dey · Q&A and discussion" | "Aryama … will make sure we leave plenty of room for your questions and concerns." |
 | "The next step we hope to agree: an initial assessment with you and your key stakeholders." | *Shortened* from Mayank's closing paragraph |
 
 ### 3 · Context and stakes (`#context`) · Mayank Jain
@@ -70,7 +70,21 @@ The document itself says: *"All scenarios, figures and dates in the stories are 
 
 The timeline has unlabelled monthly ticks only. No interim dates or milestones are implied.
 
-### 4 · The hidden-rule challenge (`#innovation-challenge`) · Sushant
+### 4 · Meet the Meridian Wizards (`#team`)
+**Source section:** Mayank's agenda paragraph; plan at a glance
+
+| On screen | Source |
+| --- | --- |
+| Heading "Meet the Meridian Wizards" and subtitle "The minds behind the transformation." | Team-provided branding (not a source claim) |
+| Mayank Jain, Meridian CAL | Source: "Mayank, Client Account Lead (CAL)"; displayed role team-provided |
+| Sushant, ATCI Delivery and Innovation Lead (role team-provided); "Shows how AI-led delivery with GenWizard and myWizard can de-risk and accelerate the program." | "Sushant, our Delivery & Innovation Lead, who will show how AI-led delivery with GenWizard and myWizard can de-risk and accelerate this program" |
+| Neeti Bourai, Delivery Manager (role team-provided); "Leads a peer telco program and shares how a very similar challenge was solved." | "Neeti, who leads a peer telco program, will share a real story of how we solved a very similar challenge" |
+| Suryakanta Das, CMT Market Lead (role team-provided); "Brings it together: why Accenture, and why now." | "Suryakant, our Market Lead, will then bring it together: why Accenture, and why now" |
+| Aryama Dey, Senior Delivery Manager (role team-provided); "Facilitates the discussion and makes room for your questions and concerns." | "Aryama, our Client Engagement Lead, will make sure we leave plenty of room for your questions and concerns" |
+| Mayank: "Opens the conversation: what is at stake, and what matters most to Meridian." | Topic 1 sub-topics ("the $3.54 billion at stake", "What matters to Tom and John") |
+| Surnames | From the supplied photograph filenames (not in the speech document) |
+
+### 5 · The hidden-rule challenge (`#innovation-challenge`) · Sushant
 **Source section:** Topic 2 speech, Daniel's story
 
 | On screen | Source |
@@ -84,7 +98,7 @@ The timeline has unlabelled monthly ticks only. No interim dates or milestones a
 | "An undocumented discount, found by accident in week three / Would have mispriced 50,000 customers" | "in week three, a billing analyst found, by accident, an undocumented discount that would have mispriced 50,000 customers" |
 | Code fragment and faint labels (`DISC_07`, `wf_order_validate_v3` …) | **Illustrative only**, labelled "Illustrative fragment". They make no claims. |
 
-### 5 · AI-led discovery (`#innovation-solution`) · Sushant
+### 6 · AI-led discovery (`#innovation-solution`) · Sushant
 **Source section:** Topic 2 speech, the innovation and the result
 
 | On screen | Source |
@@ -101,7 +115,7 @@ The timeline has unlabelled monthly ticks only. No interim dates or milestones a
 | "myWizard · One control tower across all three vendors" | "myWizard put all three vendors on one control tower" |
 | "Proposed for Meridian: a two-week proof of concept on a sample of the estate, inside your environment." | "start with a two-week proof of concept on a sample of Meridian's estate, inside your environment" |
 
-### 6 · The value story (`#value`) · Neeti Bourai
+### 7 · The value story (`#value`) · Neeti Bourai
 **Source section:** Topic 3 speech
 
 | On screen | Source |
@@ -114,7 +128,7 @@ The timeline has unlabelled monthly ticks only. No interim dates or milestones a
 | "Validate early, learn quickly and scale with confidence." | Verbatim |
 | Value 360: Client Value · Technology and Innovation · Talent and People · Sustainability | "Value 360 across Client Value, Technology & Innovation, Talent/People and Sustainability" (punctuation normalized) |
 
-### 7 · June 28 (`#june-28`) · Neeti Bourai
+### 8 · June 28 (`#june-28`) · Neeti Bourai
 **Source section:** Topic 3 speech, the second question
 
 | On screen | Source |
@@ -128,7 +142,7 @@ The timeline has unlabelled monthly ticks only. No interim dates or milestones a
 | "The next chapter" | "Meridian's next chapter of growth" |
 | "Let's prove what matters most, early." | Verbatim |
 
-### 8 · Why Accenture and the initial assessment (`#assessment`) · Suryakanta Das
+### 9 · Why Accenture and the initial assessment (`#assessment`) · Suryakanta Das
 **Source section:** Topic 4 speech, plus Neeti's recommendation
 
 | On screen | Source |
@@ -145,21 +159,7 @@ The timeline has unlabelled monthly ticks only. No interim dates or milestones a
 | 7 Produce the high-level roadmap | "a high-level delivery roadmap" |
 | "A controlled, evidence-based path to the six-month ambition." | "a realistic, evidence-based path to achieving the six-month ambition"; "a controlled and measurable transformation" |
 
-### 9 · Meet the Meridian Wizards (`#team`)
-**Source section:** Mayank's agenda paragraph; plan at a glance
-
-| On screen | Source |
-| --- | --- |
-| Heading "Meet the Meridian Wizards" and subtitle "The minds behind the transformation." | Team-provided branding (not a source claim) |
-| Mayank Jain, CAL | Source: "Mayank, Client Account Lead (CAL)"; displayed role team-provided |
-| Sushant, ATCI Delivery and Innovation Lead (role team-provided); "Shows how AI-led delivery with GenWizard and myWizard can de-risk and accelerate the program." | "Sushant, our Delivery & Innovation Lead, who will show how AI-led delivery with GenWizard and myWizard can de-risk and accelerate this program" |
-| Neeti Bourai, Delivery Manager (role team-provided); "Leads a peer telco program and shares how a very similar challenge was solved." | "Neeti, who leads a peer telco program, will share a real story of how we solved a very similar challenge" |
-| Suryakanta Das, CMT Market Lead (role team-provided); "Brings it together: why Accenture, and why now." | "Suryakant, our Market Lead, will then bring it together: why Accenture, and why now" |
-| Aryama Das, Senior Delivery Manager (role team-provided); "Facilitates the discussion and makes room for your questions and concerns." | "Aryama, our Client Engagement Lead, will make sure we leave plenty of room for your questions and concerns" |
-| Mayank: "Opens the conversation: what is at stake, and what matters most to Meridian." | Topic 1 sub-topics ("the $3.54 billion at stake", "What matters to Tom and John") |
-| Surnames | From the supplied photograph filenames (not in the speech document) |
-
-### 10 · Executive ask and Q&A (`#qa`) · Suryakanta Das asks; Aryama Das facilitates
+### 10 · Executive ask and Q&A (`#qa`) · Suryakanta Das asks; Aryama Dey facilitates
 **Source section:** Topic 4 speech, the ask and the assessment outputs
 
 | On screen | Source |

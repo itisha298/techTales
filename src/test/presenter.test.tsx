@@ -20,7 +20,9 @@ describe('speaker handover', () => {
     window.location.hash = '#context';
     render(<App />);
     expect(screen.queryByTestId('handover')).not.toBeInTheDocument();
-    await key('ArrowRight'); // context (Mayank) → challenge (Sushant)
+    await key('ArrowRight'); // context (Mayank) → team introduction (Mayank): no handover
+    expect(screen.queryByTestId('handover')).not.toBeInTheDocument();
+    await key('ArrowRight'); // team introduction (Mayank) → challenge (Sushant)
     const cue = await screen.findByTestId('handover');
     expect(cue).toHaveTextContent('Now speaking');
     expect(cue).toHaveTextContent('Sushant');

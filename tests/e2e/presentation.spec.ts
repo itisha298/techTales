@@ -4,12 +4,12 @@ const SCENES = [
   'opening',
   'journey',
   'context',
+  'team',
   'innovation-challenge',
   'innovation-solution',
   'value',
   'june-28',
   'assessment',
-  'team',
   'qa',
 ];
 
@@ -32,7 +32,7 @@ test.describe('navigation', () => {
     }
     await expect(page.getByRole('heading', { name: /discuss what matters most/i })).toBeVisible();
     // Backwards from the Q&A build: builds unwind before scenes change.
-    const back = ['qa', 'team', 'assessment', 'june-28', 'june-28', 'value', 'innovation-solution', 'innovation-challenge', 'context', 'journey', 'opening'];
+    const back = ['qa', 'assessment', 'june-28', 'june-28', 'value', 'innovation-solution', 'innovation-challenge', 'team', 'context', 'journey', 'opening'];
     for (const id of back) {
       await page.keyboard.press('ArrowLeft');
       await expectScene(page, id);
@@ -42,7 +42,7 @@ test.describe('navigation', () => {
     await page.keyboard.press('End');
     await expectScene(page, 'qa');
     await page.keyboard.press('PageUp');
-    await expectScene(page, 'team');
+    await expectScene(page, 'assessment');
     await page.keyboard.press('PageDown');
     await expectScene(page, 'qa');
     expect(errors).toEqual([]);
@@ -71,7 +71,7 @@ test.describe('navigation', () => {
     await expectScene(page, 'context');
     // a fresh, separate gesture moves again
     await page.mouse.wheel(0, 120);
-    await expectScene(page, 'innovation-challenge');
+    await expectScene(page, 'team');
   });
 
   test('touch swipes navigate', async ({ page }) => {
@@ -162,5 +162,56 @@ test.describe('photographs', () => {
     await page.route('**/team/neeti-bourai.jpg', (r) => r.abort());
     await page.goto('/#team');
     await expect(page.getByTestId('portrait-fallback-neeti')).toHaveText('NB');
+  });
+});
+
+test.describe('scene sequence', () => {
+  // Scene order as presented: the team introduction follows Mayank's context scene.
+  const ORDER = ['opening', 'journey', 'context', 'team', 'innovation-challenge', 'innovation-solution', 'value', 'june-28', 'assessment', 'qa'];
+
+  test('forward and reverse walks visit every scene once, with 01/10 to 10/10', async ({ page }) => {
+    await page.goto('/#opening');
+    await expectScene(page, 'opening');
+    const counter = (n: number) => `${String(n).padStart(2, '0')} / 10`;
+    await expect(page.getByText(counter(1), { exact: true })).toBeVisible();
+    const forward: string[] = [];
+    for (let n = 2; n <= 10; n++) {
+      // june-28 and qa have a second build; step through it with the same arrow.
+      const id = ORDER[n - 1];
+      await page.keyboard.press('ArrowRight');
+      await expectScene(page, id);
+      forward.push(id);
+      await expect(page.getByText(counter(n), { exact: true })).toBeVisible();
+      if (id === 'june-28' || id === 'qa') await page.keyboard.press('ArrowRight');
+    }
+    expect(forward).toEqual(ORDER.slice(1));
+
+    // Reverse: unwind the Q&A build, then go back scene by scene. Two-build
+    // scenes (june-28) need one extra back-press to unwind their build.
+    await page.keyboard.press('ArrowLeft');
+    await expectScene(page, 'qa');
+    for (let n = 9; n >= 1; n--) {
+      await page.keyboard.press('ArrowLeft');
+      await expectScene(page, ORDER[n - 1]);
+      await expect(page.getByText(counter(n), { exact: true })).toBeVisible();
+      if (ORDER[n - 1] === 'june-28') await page.keyboard.press('ArrowLeft');
+    }
+    await expectScene(page, 'opening');
+  });
+
+  test('the team introduction appears only once, straight after Mayank', async ({ page }) => {
+    await page.goto('/#context');
+    await page.keyboard.press('ArrowRight');
+    await expectScene(page, 'team');
+    await expect(page.locator('section[data-scene]')).toContainText('Meet the Meridian Wizards');
+    await expect(page.locator('[data-testid=team-member]')).toHaveCount(5);
+    await page.keyboard.press('ArrowRight');
+    await expectScene(page, 'innovation-challenge');
+    // Walk to the end and confirm the team screen is not repeated there.
+    await page.keyboard.press('End');
+    await expectScene(page, 'qa');
+    await page.keyboard.press('ArrowLeft');
+    await page.keyboard.press('ArrowLeft');
+    await expectScene(page, 'assessment');
   });
 });

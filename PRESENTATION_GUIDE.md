@@ -50,7 +50,7 @@ The deck **never advances on its own**.
 
 ### Two scenes have a build step
 
-- **June 28 (scene 7):** the first **→** runs the purple diagonal wipe into "The next chapter". The next **→** moves on. Trigger the wipe as Neeti asks the second question.
+- **June 28 (scene 8):** the first **→** runs the purple diagonal wipe into "The next chapter". The next **→** moves on. Trigger the wipe as Neeti asks the second question.
 - **Executive ask (scene 10):** the first **→** (or the **Open Q&A** button) switches to Aryama's Q&A screen.
 
 Scenes with a build step show two small diamonds in the bottom-right of the rail: ◆◇ means the next arrow **completes the animation**; ◆◆ means the next arrow changes scene. The presenter notes and toolbar say the same thing.
@@ -65,26 +65,25 @@ When the speaker changes, the bottom rail briefly shows **Now speaking: name and
 | 2 | The journey | Mayank Jain | 0:50 |
 | 3 | Context and stakes | Mayank Jain | 1:50 |
 |   | **Mayank total** | | **≈ 3 min 25 sec** |
-| 4 | The hidden-rule challenge | Sushant | 1:35 |
-| 5 | AI-led discovery | Sushant | 1:25 |
+| 4 | Meet the Meridian Wizards (team introduction) | Mayank Jain introduces | 0:15 |
+| 5 | The hidden-rule challenge | Sushant | 1:35 |
+| 6 | AI-led discovery | Sushant | 1:25 |
 |   | **Sushant total** | | **≈ 3 min** |
-| 6 | The value story | Neeti Bourai | 2:30 |
-| 7 | June 28 | Neeti Bourai | 1:30 |
+| 7 | The value story | Neeti Bourai | 2:30 |
+| 8 | June 28 | Neeti Bourai | 1:30 |
 |   | **Neeti total** | | **≈ 4 min** |
-| 8 | Why Accenture and the initial assessment | Suryakanta Das | 2:00 |
-| 9 | Meet the team | Suryakanta Das | 0:15 |
-| 10 | Executive ask (the final question) | Suryakanta Das | (in scene 10) |
+| 9 | Why Accenture and the initial assessment | Suryakanta Das | 2:00 |
 |   | **Suryakanta total** | | **≈ 2 min 30 sec** |
-| 10 | Q&A and discussion | Aryama Das | ≈ 7 min |
+| 10 | Executive ask and Q&A (the final scene) | Suryakanta asks, Aryama Dey leads | ≈ 7 min |
 |   | **Total** | | **20:00** |
 
 Scene times are planning estimates derived from the speech lengths in the source document.
 
 ## Speaker handover sequence
 
-1. **Mayank → Sushant.** On the context scene: "With that, let me hand over to Sushant to talk about innovation." Advance to scene 4.
-2. **Sushant → Neeti.** At the end of scene 5: "Neeti will now share a different kind of story: what happens when business and IT look at the same customer." Advance to scene 6.
-3. **Neeti → Suryakanta.** At the end of scene 7: "Let's prove what matters most, early." The source has no scripted handover line, so pass over naturally. Advance to scene 8.
+1. **Mayank → team introduction → Sushant.** Mayank finishes the context scene, then advances to scene 4, the Meet the Meridian Wizards introduction (about 15 seconds, no scripted speech). He then hands over: "With that, let me hand over to Sushant to talk about innovation." Advance to scene 5.
+2. **Sushant → Neeti.** At the end of scene 6: "Neeti will now share a different kind of story: what happens when business and IT look at the same customer." Advance to scene 7.
+3. **Neeti → Suryakanta.** At the end of scene 8: "Let's prove what matters most, early." The source has no scripted handover line, so pass over naturally. Advance to scene 9.
 4. **Suryakanta → Aryama.** On scene 10, Suryakanta asks: "Would you be comfortable sponsoring this initial assessment…?" Then Suryakanta **stops talking and lets Tom answer**. Press **→** or **Open Q&A** to hand to Aryama.
 
 Mayank's agenda paragraph ("Here is how we will use the time…") is placed on scene 2, although the source speech delivers it after the context. The notes mark which paragraph belongs to which scene. Either order works.

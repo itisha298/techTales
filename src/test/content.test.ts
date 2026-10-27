@@ -51,7 +51,7 @@ describe('content fidelity guards', () => {
   });
 
   it('has five team members with images and crops', () => {
-    expect(team.map((m) => m.name)).toEqual(['Mayank Jain', 'Sushant', 'Neeti Bourai', 'Suryakanta Das', 'Aryama Das']);
+    expect(team.map((m) => m.name)).toEqual(['Mayank Jain', 'Sushant', 'Neeti Bourai', 'Suryakanta Das', 'Aryama Dey']);
     for (const m of team) {
       expect(m.image).toMatch(/team\/[a-z-]+\.(png|jpg)$/);
       expect(m.objectPosition).toMatch(/%/);

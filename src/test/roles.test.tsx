@@ -6,11 +6,11 @@ import { speakerPlans } from '../content/speakerNotes';
 import { team } from '../data/team';
 
 const ROLES = {
-  'Mayank Jain': 'CAL',
+  'Mayank Jain': 'Meridian CAL',
   Sushant: 'ATCI Delivery and Innovation Lead',
   'Neeti Bourai': 'Delivery Manager',
   'Suryakanta Das': 'CMT Market Lead',
-  'Aryama Das': 'Senior Delivery Manager',
+  'Aryama Dey': 'Senior Delivery Manager',
 };
 
 describe('speaker roles', () => {
@@ -44,7 +44,7 @@ describe('speaker roles', () => {
     render(<App />);
     await act(() => void fireEvent.keyDown(window, { key: 'n' }));
     const notes = screen.getByRole('complementary', { name: /presenter notes/i });
-    expect(notes).toHaveTextContent('CAL · speech about 3 min 25 sec');
+    expect(notes).toHaveTextContent('Meridian CAL · speech about 3 min 25 sec');
     expect(chapters.map((c) => c.durationSeconds)).toEqual([205, 180, 240, 150]);
     expect(speakerPlans.neeti.duration).toBe('about 4 min');
   });

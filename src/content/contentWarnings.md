@@ -57,7 +57,7 @@ The hidden-rule scene shows short, deliberately unreadable code-like fragments t
 
 ## 11. Speaker roles are team-provided
 
-The roles shown on screen (CAL; ATCI Delivery and Innovation Lead; Delivery Manager; CMT Market Lead; Senior Delivery Manager) were supplied by the team. They differ from the speech document, which says "Client Account Lead (CAL)", "Delivery & Innovation Lead", "leads a peer telco program", "Market Lead" and "Client Engagement Lead". The verbatim speeches in the presenter notes keep the source wording, so speakers may want to align what they say aloud with the roles on screen. Roles are edited in `src/content/editable/team.json`.
+The roles shown on screen (Meridian CAL; ATCI Delivery and Innovation Lead; Delivery Manager; CMT Market Lead; Senior Delivery Manager) were supplied by the team. They differ from the speech document, which says "Client Account Lead (CAL)", "Delivery & Innovation Lead", "leads a peer telco program", "Market Lead" and "Client Engagement Lead". The verbatim speeches in the presenter notes keep the source wording, so speakers may want to align what they say aloud with the roles on screen. Roles are edited in `src/content/editable/team.json`.
 
 ## 12. Where these settings now live
 

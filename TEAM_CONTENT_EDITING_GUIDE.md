@@ -155,7 +155,7 @@ Photos live in `public/team/`, with these exact file names:
 | Sushant | `public/team/sushant.png` |
 | Neeti Bourai | `public/team/neeti-bourai.jpg` |
 | Suryakanta Das | `public/team/suryakanta-das.jpg` |
-| Aryama Das | `public/team/aryama-das.jpg` |
+| Aryama Dey | `public/team/aryama-das.jpg` |
 
 **Prepare the photo first:**
 

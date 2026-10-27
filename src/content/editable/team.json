@@ -5,7 +5,7 @@
       "id": "mayank",
       "name": "Mayank Jain",
       "shortName": "Mayank",
-      "role": "CAL",
+      "role": "Meridian CAL",
       "chapter": "Context",
       "image": "team/mayank-jain.png",
       "objectPosition": "50% 20%",
@@ -47,7 +47,7 @@
     },
     {
       "id": "aryama",
-      "name": "Aryama Das",
+      "name": "Aryama Dey",
       "shortName": "Aryama",
       "role": "Senior Delivery Manager",
       "chapter": "Q&A",

@@ -62,12 +62,12 @@ describe('deck navigation', () => {
       'opening',
       'journey',
       'context',
+      'team',
       'innovation-challenge',
       'innovation-solution',
       'value',
       'june-28',
       'assessment',
-      'team',
       'qa',
     ]);
   });

@@ -25,12 +25,12 @@ export const SCENE_STRUCTURE: readonly { id: SceneId; chapterId: ChapterId | nul
   { id: 'opening', chapterId: null, steps: 1 },
   { id: 'journey', chapterId: null, steps: 1 },
   { id: 'context', chapterId: 'context', steps: 1 },
+  { id: 'team', chapterId: null, steps: 1 },
   { id: 'innovation-challenge', chapterId: 'innovation', steps: 1 },
   { id: 'innovation-solution', chapterId: 'innovation', steps: 1 },
   { id: 'value', chapterId: 'value', steps: 1 },
   { id: 'june-28', chapterId: 'value', steps: 2 },
   { id: 'assessment', chapterId: 'why-accenture', steps: 1 },
-  { id: 'team', chapterId: null, steps: 1 },
   { id: 'qa', chapterId: null, steps: 2 },
 ];
 export const SCENE_IDS = SCENE_STRUCTURE.map((s) => s.id);
