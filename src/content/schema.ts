@@ -35,6 +35,17 @@ export const SCENE_STRUCTURE: readonly { id: SceneId; chapterId: ChapterId | nul
 ];
 export const SCENE_IDS = SCENE_STRUCTURE.map((s) => s.id);
 
+/** The six presented slides, each made of original scenes shown as progressive builds. */
+export const SLIDE_STRUCTURE: readonly { id: string; parts: SceneId[] }[] = [
+  { id: 'opening', parts: ['opening'] },
+  { id: 'journey', parts: ['journey', 'context'] },
+  { id: 'innovation', parts: ['innovation-challenge', 'innovation-solution'] },
+  { id: 'value', parts: ['value', 'june-28'] },
+  { id: 'assessment', parts: ['assessment', 'qa'] },
+  { id: 'team', parts: ['team'] },
+];
+export const SLIDE_IDS = SLIDE_STRUCTURE.map((s) => s.id);
+
 /** The planned session length the scene timings must add up to. */
 export const PLANNED_TOTAL_SECONDS = 20 * 60;
 
@@ -138,6 +149,7 @@ export const RULES: Record<EditableFile, Rule> = {
     settings: obj({ assessmentDuration: text(), proofOfConceptDuration: text(), goLive: text() }),
     client: obj({ name: text(), fullName: text(), tom: text(), john: text(), marcus: text(), marcusFullName: text(), marcusRole: text() }),
     scenes: { k: 'record', keys: SCENE_IDS, of: SCENE_ENTRY, exact: true },
+    slides: { k: 'record', keys: SLIDE_IDS, exact: true, of: obj({ navLabel: text(), railLabel: opt(text()) }) },
     screens: obj({
       opening: obj({ label: text(), cta: text(), hint: text(), hintTouch: text(), teamLabel: text() }),
       journey: obj({

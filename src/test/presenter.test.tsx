@@ -2,19 +2,19 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import { describe, expect, it } from 'vitest';
 import App from '../App';
 import * as content from '../content/presentationContent';
-import { scenes, sceneIndexById } from '../content/presentationContent';
+import { buildFor, scenes } from '../content/presentationContent';
 import { speakerFor } from '../lib/speaker';
 import { getMember } from '../data/team';
 
 const key = (k: string) => act(() => void fireEvent.keyDown(window, { key: k }));
 
 describe('speaker handover', () => {
-  it('Scene 10 is presented by Aryama in both builds; Scene 9 stays with Suryakanta', () => {
-    const qa = scenes[sceneIndexById.qa];
-    expect(speakerFor(qa, 0)).toBe('aryama');
-    expect(speakerFor(qa, 1)).toBe('aryama');
-    expect(speakerFor(scenes[sceneIndexById.assessment], 0)).toBe('suryakanta');
-    expect(speakerFor(scenes[sceneIndexById.context], 0)).toBe('mayank');
+  it('the Q&A builds are presented by Aryama; the assessment build stays with Suryakanta', () => {
+    const slide = scenes[buildFor('assessment').index];
+    expect(slide.stepSpeakers).toEqual(['suryakanta', 'aryama', 'aryama']);
+    expect(speakerFor(slide, 0)).toBe('suryakanta');
+    expect(speakerFor(slide, 1)).toBe('aryama');
+    expect(speakerFor(scenes[buildFor('context').index], buildFor('context').step)).toBe('mayank');
   });
 
   it('shows "Now speaking" in the rail when the speaker changes', async () => {
@@ -43,17 +43,17 @@ describe('speaker handover', () => {
 });
 
 describe('build indicator', () => {
-  it('appears only on scenes with two builds and tracks progress', async () => {
+  it('appears on slides with several builds and tracks progress', async () => {
     window.location.hash = '#value';
     render(<App />);
-    expect(screen.queryByTestId('build-indicator')).not.toBeInTheDocument();
-    await key('ArrowRight'); // → june-28, build 1
     const ind = screen.getByTestId('build-indicator');
-    expect(ind).toHaveTextContent('Build 1 of 2');
+    expect(ind).toHaveTextContent('Build 1 of 3');
     expect(ind).toHaveTextContent('Next arrow completes the animation');
     expect(screen.getByRole('button', { name: 'Next build' })).toBeInTheDocument();
-    await key('ArrowRight'); // build 2
-    expect(screen.getByTestId('build-indicator')).toHaveTextContent('Build 2 of 2');
+    await key('ArrowRight'); // June 28 wipe
+    expect(screen.getByTestId('build-indicator')).toHaveTextContent('Build 2 of 3');
+    await key('ArrowRight'); // June 28 close
+    expect(screen.getByTestId('build-indicator')).toHaveTextContent('Build 3 of 3');
     expect(screen.getByTestId('build-indicator')).not.toHaveTextContent('completes the animation');
     expect(screen.getByRole('button', { name: 'Next scene' })).toBeInTheDocument();
   });
@@ -62,7 +62,7 @@ describe('build indicator', () => {
     window.location.hash = '#june-28';
     render(<App />);
     await key('n');
-    expect(screen.getByTestId('notes-build')).toHaveTextContent('Build 1 of 2');
+    expect(screen.getByTestId('notes-build')).toHaveTextContent('Build 2 of 3');
   });
 });
 

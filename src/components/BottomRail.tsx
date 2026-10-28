@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, LayoutGrid } from 'lucide-react';
-import { chapterById, experience, scenes, ui } from '../content/presentationContent';
+import { chapterById, experience, partAt, partMeta, scenes, ui } from '../content/presentationContent';
 import { getMember } from '../data/team';
 import { diagonalHidden, diagonalShown, useMotionPreset } from '../lib/motion';
 import { speakerFor } from '../lib/speaker';
@@ -51,7 +51,9 @@ export function BottomRail({
 }) {
   const m = useMotionPreset();
   const scene = scenes[index];
-  const chapter = scene.chapterId ? chapterById[scene.chapterId] : null;
+  // Chapter and label follow the original scene on screen, not the whole slide.
+  const part = partMeta[partAt(index, step)];
+  const chapter = part.chapterId ? chapterById[part.chapterId] : null;
   const total = scenes.length;
   const atStart = index === 0 && step === 0;
   const atEnd = index === total - 1 && step === scene.steps - 1;
@@ -129,7 +131,7 @@ export function BottomRail({
                     {chapter.title}
                   </>
                 ) : (
-                  scene.railLabel
+                  part.railLabel ?? scene.railLabel
                 )}
                 <span className={`mx-2 ${muted}`}>·</span>
                 <span className={`font-medium ${muted}`}>{speaker.name}</span>

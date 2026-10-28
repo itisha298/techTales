@@ -366,5 +366,29 @@
       "current": "Shown only as a future-state idea, not a date",
       "where": "screens.june28 in src/content/editable/presentation.json"
     }
-  ]
+  ],
+  "slides": {
+    "opening": {
+      "navLabel": "Opening",
+      "railLabel": "Opening"
+    },
+    "journey": {
+      "navLabel": "The journey and context",
+      "railLabel": "The journey"
+    },
+    "innovation": {
+      "navLabel": "Hidden rules and AI-led discovery"
+    },
+    "value": {
+      "navLabel": "The value story and June 28"
+    },
+    "assessment": {
+      "navLabel": "Why Accenture and the Q&A",
+      "railLabel": "Ask and Q&A"
+    },
+    "team": {
+      "navLabel": "Meet the team",
+      "railLabel": "The team"
+    }
+  }
 }

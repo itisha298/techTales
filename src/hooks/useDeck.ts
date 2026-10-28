@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useReducer } from 'react';
-import { sceneIds, scenes } from '../content/presentationContent';
-import type { SceneId } from '../types/presentation';
+import { buildFromHash, hashFor, scenes } from '../content/presentationContent';
 
 export interface DeckState {
   index: number;
@@ -45,29 +44,22 @@ export function deckReducer(state: DeckState, action: Action): DeckState {
   }
 }
 
-export const indexFromHash = (hash: string): number => {
-  const id = decodeURIComponent(hash.replace(/^#/, '')) as SceneId;
-  const i = sceneIds.indexOf(id);
-  return i >= 0 ? i : 0;
-};
-
-/** Scene navigation with URL-hash persistence (#opening, #journey, …). */
+/** Scene navigation with URL-hash persistence (#opening, #context, …). */
 export function useDeck() {
   const [state, dispatch] = useReducer(deckReducer, undefined, () => ({
-    index: indexFromHash(window.location.hash),
-    step: 0,
+    ...buildFromHash(window.location.hash),
     direction: 1 as const,
   }));
 
-  // Reflect the scene in the URL without growing history on every slide.
+  // Reflect the current build in the URL without growing history on every step.
   useEffect(() => {
-    const hash = `#${sceneIds[state.index]}`;
+    const hash = `#${hashFor(state.index, state.step)}`;
     if (window.location.hash !== hash) window.history.replaceState(null, '', hash);
-  }, [state.index]);
+  }, [state.index, state.step]);
 
-  // Manual hash edits / links jump to that scene.
+  // Manual hash edits / links jump to that build.
   useEffect(() => {
-    const onHash = () => dispatch({ type: 'goto', index: indexFromHash(window.location.hash) });
+    const onHash = () => dispatch({ type: 'goto', ...buildFromHash(window.location.hash) });
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);

@@ -61,22 +61,42 @@ export interface Metric {
   qualifier?: string;
 }
 
-export interface SceneMeta {
+/** The six presented slides. Each slide runs one or more parts as progressive builds. */
+export type SlideId = 'opening' | 'journey' | 'innovation' | 'value' | 'assessment' | 'team';
+
+/** One original scene (a "part"): content, hash id, notes and timing are unchanged. */
+export interface PartMeta {
   id: SceneId;
-  /** Short label used in navigation, overview and the progress rail. */
   navLabel: string;
-  /** Chapter this scene belongs to, or null for framing scenes. */
+  /** Chapter this part belongs to, or null for framing scenes. */
   chapterId: ChapterId | null;
-  /** Label shown in the bottom rail when chapterId is null. */
   railLabel?: string;
   speakerId: SpeakerId;
-  /** Planned speaking time for this scene, in seconds. */
-  plannedSeconds: number;
-  /** Number of in-scene builds advanced by "next" before leaving the scene. */
-  steps: number;
-  /** Optional speaker per build (e.g. the ask is posed by one speaker, Q&A led by another). */
   stepSpeakers?: SpeakerId[];
-  /** Plain-language description of the visual treatment (documentation). */
-  visualTreatment: string;
+  plannedSeconds: number;
+  /** Number of builds inside this part. */
+  steps: number;
   centralMessage: string;
+  visualTreatment: string;
+}
+
+export interface SceneMeta {
+  id: SlideId;
+  navLabel: string;
+  chapterId: ChapterId | null;
+  railLabel?: string;
+  /** Presenter of the slide's first build. */
+  speakerId: SpeakerId;
+  /** Sum of the parts' planned times. */
+  plannedSeconds: number;
+  /** Total builds across all parts of this slide. */
+  steps: number;
+  /** Presenter for each build, in order. */
+  stepSpeakers: SpeakerId[];
+  centralMessage: string;
+  visualTreatment: string;
+  /** Original scenes shown on this slide, in order. */
+  parts: SceneId[];
+  /** Each build: which part is showing, and that part's own build number. */
+  builds: { part: SceneId; local: number }[];
 }

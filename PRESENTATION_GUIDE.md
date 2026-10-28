@@ -50,8 +50,8 @@ The deck **never advances on its own**.
 
 ### Two scenes have a build step
 
-- **June 28 (scene 7):** the first **→** runs the purple diagonal wipe into "The next chapter". The next **→** moves on. Trigger the wipe as Neeti asks the second question.
-- **Executive ask (scene 9):** the first **→** (or the **Open Q&A** button) switches to Aryama's Q&A screen.
+- **June 28 (slide 4, builds 2–3):** the first **→** runs the purple diagonal wipe into "The next chapter". The next **→** moves on. Trigger the wipe as Neeti asks the second question.
+- **Executive ask (slide 5, builds 2–3):** the first **→** (or the **Open Q&A** button) switches to Aryama's Q&A screen.
 
 Scenes with a build step show two small diamonds in the bottom-right of the rail: ◆◇ means the next arrow **completes the animation**; ◆◆ means the next arrow changes scene. The presenter notes and toolbar say the same thing.
 
@@ -59,34 +59,28 @@ When the speaker changes, the bottom rail briefly shows **Now speaking: name and
 
 ## Suggested 20-minute running order
 
-| # | Scene | Speaker | Planned |
+| # | Slide (builds) | Speaker | Planned |
 | --- | --- | --- | --- |
 | 1 | Opening | Mayank Jain | 0:45 |
-| 2 | The journey | Mayank Jain | 0:50 |
-| 3 | Context and stakes | Mayank Jain | 1:50 |
-|   | **Mayank total** | | **≈ 3 min 25 sec** |
-| 4 | The hidden-rule challenge | Sushant | 1:35 |
-| 5 | AI-led discovery | Sushant | 1:25 |
+| 2 | The journey (build 1), then context and stakes (build 2) | Mayank Jain | 2:40 |
+|   | **Mayank total** | | **≈ 3 min 25 sec** (with the 0:45 opening) |
+| 3 | The hidden-rule challenge (build 1), then AI-led discovery (build 2) | Sushant | 3:00 |
 |   | **Sushant total** | | **≈ 3 min** |
-| 6 | The value story | Neeti Bourai | 2:30 |
-| 7 | June 28 | Neeti Bourai | 1:30 |
+| 4 | The value story (build 1), then June 28 wipe and close (builds 2–3) | Neeti Bourai | 4:00 |
 |   | **Neeti total** | | **≈ 4 min** |
-| 8 | Why Accenture and the initial assessment | Suryakanta Das | 2:00 |
+| 5 | Why Accenture and the initial assessment (build 1), then the executive ask and Q&A (builds 2–3) | Suryakanta Das asks, Aryama Dey leads | 9:20 |
 |   | **Suryakanta total** | | **≈ 2 min 30 sec** |
-| 9 | Executive ask and Q&A | Suryakanta asks, Aryama Dey leads | ≈ 7 min |
-| 10 | Meet the Meridian Wizards (team introduction) | Mayank Jain introduces | 0:15 |
+| 6 | Meet the Meridian Wizards (team introduction) | Mayank Jain introduces | 0:15 |
 |   | **Total** | | **20:00** |
 
 Scene times are planning estimates derived from the speech lengths in the source document.
 
 ## Speaker handover sequence
 
-1. **Mayank → Sushant.** On the context scene: "With that, over to Sushant." Advance to scene 4.
-2. **Sushant → Neeti.** At the end of scene 5: "Neeti will now share what happens when business and IT look at the same customer." Advance to scene 6.
-3. **Neeti → Suryakanta.** At the end of scene 7: "Let's prove what matters most, early." The source has no scripted handover line, so pass over naturally. Advance to scene 8.
-4. **Suryakanta → Aryama.** On scene 9, Suryakanta asks: "Would you be comfortable sponsoring this initial assessment…?" Then Suryakanta **stops talking and lets Tom answer**. Press **→** or **Open Q&A** to hand to Aryama. The Meet the Meridian Wizards introduction is the final slide, scene 10.
-
-Mayank's agenda paragraph ("Here is how we will use the time…") is placed on scene 2, although the source speech delivers it after the context. The notes mark which paragraph belongs to which scene. Either order works.
+1. **Mayank → Sushant.** On the journey and context slide, after the context build: "With that, over to Sushant." Advance to slide 3.
+2. **Sushant → Neeti.** At the end of slide 3: "Neeti will now share what happens when business and IT look at the same customer." Advance to slide 4.
+3. **Neeti → Suryakanta.** At the end of slide 4: "Let's prove what matters most, early." The source has no scripted handover line, so pass over naturally. Advance to slide 5.
+4. **Suryakanta → Aryama.** On slide 5, Suryakanta asks: "Would you be comfortable sponsoring this initial assessment…?" Then Suryakanta **stops talking and lets Tom answer**. Press **→** or **Open Q&A** to hand to Aryama. The Meet the Meridian Wizards introduction is the final slide, slide 6.
 
 ## Presenter mode
 

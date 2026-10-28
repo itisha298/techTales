@@ -1,18 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { deckReducer, indexFromHash, type DeckState } from '../hooks/useDeck';
-import { sceneIds, sceneIndexById, scenes } from '../content/presentationContent';
+import { deckReducer, type DeckState } from '../hooks/useDeck';
+import { buildFor, buildFromHash, scenes } from '../content/presentationContent';
+
+const SLIDE_ORDER = ['opening', 'journey', 'innovation', 'value', 'assessment', 'team'];
 
 const at = (index: number, step = 0): DeckState => ({ index, step, direction: 1 });
 
 describe('deck navigation', () => {
-  it('advances one scene at a time and stops at the end', () => {
+  it('advances one build at a time and stops at the end', () => {
     let s = at(0);
     for (let i = 0; i < 50; i++) s = deckReducer(s, { type: 'next' });
     expect(s.index).toBe(scenes.length - 1);
     expect(s.step).toBe(scenes[scenes.length - 1].steps - 1);
   });
 
-  it('visits every scene and every build exactly once going forward', () => {
+  it('visits every build of every slide exactly once going forward', () => {
     const seen: string[] = [];
     let s = at(0);
     seen.push(`${s.index}.${s.step}`);
@@ -27,19 +29,21 @@ describe('deck navigation', () => {
     expect(new Set(seen.map((k) => k.split('.')[0])).size).toBe(scenes.length);
   });
 
-  it('runs in-scene builds before leaving a scene', () => {
-    const june = sceneIndexById['june-28'];
-    let s = at(june);
+  it('runs every build of a slide before leaving it (value: value, June 28 wipe, June 28 close)', () => {
+    const value = buildFor('value');
+    let s = at(value.index, 0);
     s = deckReducer(s, { type: 'next' });
-    expect(s).toMatchObject({ index: june, step: 1 });
+    expect(s).toMatchObject({ index: value.index, step: 1 });
     s = deckReducer(s, { type: 'next' });
-    expect(s).toMatchObject({ index: june + 1, step: 0 });
+    expect(s).toMatchObject({ index: value.index, step: 2 });
+    s = deckReducer(s, { type: 'next' });
+    expect(s).toMatchObject({ index: value.index + 1, step: 0 });
   });
 
-  it('enters a multi-step scene on its last build when going back', () => {
-    const june = sceneIndexById['june-28'];
-    const s = deckReducer(at(june + 1), { type: 'prev' });
-    expect(s).toMatchObject({ index: june, step: 1, direction: -1 });
+  it('enters a slide on its last build when going back', () => {
+    const value = buildFor('value');
+    const s = deckReducer(at(value.index + 1), { type: 'prev' });
+    expect(s).toMatchObject({ index: value.index, step: scenes[value.index].steps - 1, direction: -1 });
   });
 
   it('does not move before the first scene', () => {
@@ -51,24 +55,15 @@ describe('deck navigation', () => {
     expect(deckReducer(at(3), { type: 'goto', index: -4 }).index).toBe(0);
   });
 
-  it('maps every URL hash to its scene and unknown hashes to the opening', () => {
-    sceneIds.forEach((id, i) => expect(indexFromHash(`#${id}`)).toBe(i));
-    expect(indexFromHash('#nope')).toBe(0);
-    expect(indexFromHash('')).toBe(0);
+  it('maps every original scene hash to its build, and unknown hashes to the opening', () => {
+    expect(buildFromHash('#nope')).toEqual({ index: 0, step: 0 });
+    expect(buildFromHash('')).toEqual({ index: 0, step: 0 });
+    expect(buildFromHash('#context')).toEqual(buildFor('context'));
+    expect(buildFromHash('#june-28')).toEqual(buildFor('june-28'));
+    expect(buildFromHash('#qa')).toEqual(buildFor('qa'));
   });
 
-  it('uses the required hash ids in order', () => {
-    expect(sceneIds).toEqual([
-      'opening',
-      'journey',
-      'context',
-      'innovation-challenge',
-      'innovation-solution',
-      'value',
-      'june-28',
-      'assessment',
-      'qa',
-      'team',
-    ]);
+  it('presents six slides in the required order, ending with the team', () => {
+    expect(scenes.map((s) => s.id)).toEqual(SLIDE_ORDER);
   });
 });

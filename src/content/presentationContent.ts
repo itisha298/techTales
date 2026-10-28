@@ -14,8 +14,8 @@
 import presentationJson from './editable/presentation.json';
 import chaptersJson from './editable/chapters.json';
 import metricsJson from './editable/metrics.json';
-import { placeholderValues, resolvePlaceholders, SCENE_STRUCTURE } from './schema';
-import type { Chapter, Metric, SceneId, SceneMeta, SpeakerId } from '../types/presentation';
+import { placeholderValues, resolvePlaceholders, SCENE_STRUCTURE, SLIDE_STRUCTURE } from './schema';
+import type { Chapter, Metric, PartMeta, SceneId, SceneMeta, SpeakerId } from '../types/presentation';
 
 /* ---------- Shapes of the editable files ---------- */
 
@@ -48,6 +48,7 @@ interface PresentationFile {
       visualTreatment: string;
     }
   >;
+  slides: Record<string, { navLabel: string; railLabel?: string }>;
   screens: {
     opening: { label: string; cta: string; hint: string; hintTouch: string; teamLabel: string };
     journey: { eyebrow: string; headline: string; closing: { label: string; title: string; detail: string }; nextStep: string };
@@ -163,24 +164,75 @@ export const experience = P.experience;
 export const chapters: Chapter[] = C;
 export const chapterById = Object.fromEntries(chapters.map((c) => [c.id, c])) as Record<Chapter['id'], Chapter>;
 
-/** Scene order, ids and builds come from the fixed structure; wording and timing from the JSON. */
-export const scenes: SceneMeta[] = SCENE_STRUCTURE.map(({ id, chapterId, steps }) => {
-  const s = P.scenes[id];
+/** The ten original scenes ("parts"). Ids, hashes, notes and timings are unchanged. */
+export const partMeta = Object.fromEntries(
+  SCENE_STRUCTURE.map(({ id, chapterId, steps }) => {
+    const s = P.scenes[id];
+    const part: PartMeta = {
+      id,
+      navLabel: s.navLabel,
+      chapterId,
+      ...(s.railLabel !== undefined ? { railLabel: s.railLabel } : {}),
+      speakerId: s.speakerId,
+      ...(s.stepSpeakers ? { stepSpeakers: s.stepSpeakers } : {}),
+      plannedSeconds: s.plannedSeconds,
+      steps,
+      centralMessage: s.centralMessage,
+      visualTreatment: s.visualTreatment,
+    };
+    return [id, part];
+  }),
+) as Record<SceneId, PartMeta>;
+
+/**
+ * The six presented slides. A slide shows its parts one after another as
+ * progressive builds: the first arrow shows the first part, the next arrow the
+ * next build, and so on. Totals (time, builds, speakers) add up from the parts.
+ */
+export const scenes: SceneMeta[] = SLIDE_STRUCTURE.map(({ id, parts }) => {
+  const first = partMeta[parts[0]];
+  const builds = parts.flatMap((part) => Array.from({ length: partMeta[part].steps }, (_, local) => ({ part, local })));
+  const sl = P.slides[id as keyof typeof P.slides];
   return {
-    id,
-    navLabel: s.navLabel,
-    chapterId,
-    ...(s.railLabel !== undefined ? { railLabel: s.railLabel } : {}),
-    speakerId: s.speakerId,
-    plannedSeconds: s.plannedSeconds,
-    steps,
-    ...(s.stepSpeakers ? { stepSpeakers: s.stepSpeakers } : {}),
-    centralMessage: s.centralMessage,
-    visualTreatment: s.visualTreatment,
+    id: id as SceneMeta['id'],
+    navLabel: sl.navLabel,
+    chapterId: first.chapterId,
+    ...(sl.railLabel !== undefined ? { railLabel: sl.railLabel } : {}),
+    speakerId: first.speakerId,
+    plannedSeconds: parts.reduce((sum, part) => sum + partMeta[part].plannedSeconds, 0),
+    steps: builds.length,
+    stepSpeakers: builds.map(({ part, local }) => partMeta[part].stepSpeakers?.[local] ?? partMeta[part].speakerId),
+    centralMessage: first.centralMessage,
+    visualTreatment: first.visualTreatment,
+    parts,
+    builds,
   };
 });
 
-export const sceneIds = scenes.map((s) => s.id);
+/** Which slide and build shows a given original scene. */
+export const buildFor = (part: SceneId): { index: number; step: number } => {
+  for (let index = 0; index < scenes.length; index++) {
+    const step = scenes[index].builds.findIndex((b) => b.part === part && b.local === 0);
+    if (step >= 0) return { index, step };
+  }
+  return { index: 0, step: 0 };
+};
+
+/** The original scene showing at a given slide and build. */
+export const partAt = (index: number, step: number): SceneId => scenes[index].builds[step].part;
+/** The build number inside the current original scene. */
+export const localStepAt = (index: number, step: number): number => scenes[index].builds[step].local;
+/** The build number on this slide for a given scene and its own build. */
+export const buildIndexOf = (index: number, part: SceneId, local: number): number =>
+  Math.max(0, scenes[index].builds.findIndex((b) => b.part === part && b.local === local));
+/** URL hash for a build. Hashes keep the original scene ids, so existing links still work. */
+export const hashFor = (index: number, step: number): string => partAt(index, step);
+/** Slide and build for a URL hash (e.g. #context → the journey slide, second build). */
+export const buildFromHash = (hash: string): { index: number; step: number } => {
+  const id = decodeURIComponent(hash.replace(/^#/, '')) as SceneId;
+  return id in partMeta ? buildFor(id) : { index: 0, step: 0 };
+};
+
 export const totalPlannedSeconds = scenes.reduce((sum, s) => sum + s.plannedSeconds, 0);
 
 /* ------------------------------------------------------------------ */
@@ -279,4 +331,3 @@ export const ui = {
  */
 export const pendingConfirmations = P.pendingConfirmations;
 
-export const sceneIndexById = Object.fromEntries(scenes.map((s, i) => [s.id, i])) as Record<SceneId, number>;

@@ -1,4 +1,4 @@
-import { scenes } from '../content/presentationContent';
+import { partMeta } from '../content/presentationContent';
 import { sceneCues, speakerPlans, speeches, type SpeechParagraph } from '../content/speakerNotes';
 import type { SceneId, SpeakerId } from '../types/presentation';
 
@@ -19,8 +19,7 @@ export interface SceneNotes {
 const owners = Object.entries(speeches) as [SpeakerId, NonNullable<(typeof speeches)[SpeakerId]>][];
 
 export function getSceneNotes(sceneId: SceneId): SceneNotes {
-  const scene = scenes.find((s) => s.id === sceneId)!;
-  const speakerId = scene.speakerId;
+  const speakerId = partMeta[sceneId].speakerId;
   const own = speeches[speakerId];
 
   let scriptSpeakerId: SpeakerId | null = null;

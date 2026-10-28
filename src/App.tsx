@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { experience, sceneIndexById, scenes, ui } from './content/presentationContent';
+import { buildFor, buildIndexOf, experience, localStepAt, partAt, scenes, ui } from './content/presentationContent';
 import { useDeck } from './hooks/useDeck';
 import { useFullscreen } from './hooks/useFullscreen';
 import { useGestureNavigation } from './hooks/useGestureNavigation';
@@ -44,6 +44,7 @@ const readFlags = () => {
 export default function App() {
   const deck = useDeck();
   const { index, step, direction, scene, next, prev, goTo, setStep, total } = deck;
+  // The original scene showing now (a slide can show several), and its own build number.
   const m = useMotionPreset();
   const fullscreen = useFullscreen();
   const stageRef = useRef<HTMLElement>(null);
@@ -207,15 +208,22 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey);
   }, [overlay, notesOpen, timerOpen, next, prev, goTo, total, toggleTimer, toggleRehearsal, toggleSync, openPresenterWindow, fullscreen]);
 
-  const goToScene = useCallback((id: SceneId) => goTo(sceneIndexById[id]), [goTo]);
+  const goToScene = useCallback((id: SceneId) => {
+    const b = buildFor(id);
+    goTo(b.index, b.step);
+  }, [goTo]);
+  // Builds inside the current original scene map back to this slide's build numbers.
+  const setLocalStep = (l: number) => setStep(buildIndexOf(index, partAt(index, step), l));
   const openAssessment = useCallback(() => setOverlay('assessment'), []);
   const selectScene = (i: number) => {
     setOverlay(null);
     goTo(i);
   };
 
-  const Scene = sceneComponents[scene.id];
-  const dark = isDarkStage(scene.id, step);
+  const part = partAt(index, step);
+  const local = localStepAt(index, step);
+  const Scene = sceneComponents[part];
+  const dark = isDarkStage(part, local);
   const speaker = getMember(speakerId);
   const buildNote = scene.steps > 1 ? ` ${ui.build(step + 1, scene.steps)}.` : '';
 
@@ -225,10 +233,11 @@ export default function App() {
         <h1 className="sr-only">{experience.documentTitle}</h1>
         <AnimatePresence mode="wait" custom={direction} initial={false}>
           <motion.section
-            key={scene.id}
+            key={part}
             custom={direction}
-            data-scene={scene.id}
-            data-step={step}
+            data-scene={part}
+            data-slide={scene.id}
+            data-step={local}
             aria-roledescription="scene"
             aria-label={`${index + 1} of ${total}: ${scene.navLabel}`}
             className="thin-scroll absolute inset-0 overflow-y-auto overflow-x-hidden"
@@ -236,7 +245,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0, transition: m.t(durations.sceneEnter) }}
             exit={{ opacity: 0, y: m.y(direction * -16), transition: m.t(durations.sceneExit) }}
           >
-            <Scene step={step} next={next} setStep={setStep} goToScene={goToScene} openAssessment={openAssessment} />
+            <Scene step={local} next={next} setStep={setLocalStep} goToScene={goToScene} openAssessment={openAssessment} />
           </motion.section>
         </AnimatePresence>
         <BottomRail

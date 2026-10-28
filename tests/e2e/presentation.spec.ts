@@ -166,37 +166,33 @@ test.describe('photographs', () => {
 });
 
 test.describe('scene sequence', () => {
-  // Presented order: Executive ask and Q&A is slide 9; the team introduction is the final slide 10.
-  const ORDER = ['opening', 'journey', 'context', 'innovation-challenge', 'innovation-solution', 'value', 'june-28', 'assessment', 'qa', 'team'];
+  // Every build in order: a slide's original scenes appear one after another.
+  const BUILDS = ['opening', 'journey', 'context', 'innovation-challenge', 'innovation-solution', 'value', 'june-28', 'june-28', 'assessment', 'qa', 'qa', 'team'];
+  // Slide counter shown for each build (six slides, 01/06 to 06/06).
+  const SLIDE_NUMBER = [1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, 6];
 
-  test('forward and reverse walks visit every scene once, with 01/10 to 10/10', async ({ page }) => {
+  test('forward and reverse walks visit every build, with 01/06 to 06/06', async ({ page }) => {
     await page.goto('/#opening');
     await expectScene(page, 'opening');
-    const counter = (n: number) => `${String(n).padStart(2, '0')} / 10`;
+    const counter = (n: number) => `${String(n).padStart(2, '0')} / 06`;
     await expect(page.getByText(counter(1), { exact: true })).toBeVisible();
-    for (let n = 2; n <= 10; n++) {
-      const id = ORDER[n - 1];
+    for (let i = 1; i < BUILDS.length; i++) {
       await page.keyboard.press('ArrowRight');
-      await expectScene(page, id);
-      await expect(page.getByText(counter(n), { exact: true })).toBeVisible();
-      // june-28 and qa have a second build; step through it with the same arrow.
-      if (id === 'june-28' || id === 'qa') await page.keyboard.press('ArrowRight');
+      await expectScene(page, BUILDS[i]);
+      await expect(page.getByText(counter(SLIDE_NUMBER[i]), { exact: true })).toBeVisible();
     }
-    // Reverse: scenes with two builds need one extra back-press to unwind their build.
-    for (let n = 9; n >= 1; n--) {
+    for (let i = BUILDS.length - 2; i >= 0; i--) {
       await page.keyboard.press('ArrowLeft');
-      await expectScene(page, ORDER[n - 1]);
-      await expect(page.getByText(counter(n), { exact: true })).toBeVisible();
-      if (ORDER[n - 1] === 'june-28' || ORDER[n - 1] === 'qa') await page.keyboard.press('ArrowLeft');
+      await expectScene(page, BUILDS[i]);
+      await expect(page.getByText(counter(SLIDE_NUMBER[i]), { exact: true })).toBeVisible();
     }
-    await expectScene(page, 'opening');
   });
 
   test('the team introduction is the final slide, after the Q&A', async ({ page }) => {
     await page.goto('/#qa');
     await page.keyboard.press('End');
     await expectScene(page, 'team');
-    await expect(page.getByText('10 / 10', { exact: true })).toBeVisible();
+    await expect(page.getByText('06 / 06', { exact: true })).toBeVisible();
     await expect(page.locator('[data-testid=team-member]')).toHaveCount(5);
     await page.keyboard.press('ArrowLeft');
     await expectScene(page, 'qa');

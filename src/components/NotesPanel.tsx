@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useEffect, useMemo, useRef } from 'react';
-import { pendingConfirmations, scenes, totalPlannedSeconds, ui } from '../content/presentationContent';
+import { pendingConfirmations, partAt, scenes, totalPlannedSeconds, ui } from '../content/presentationContent';
 import { speakerFor } from '../lib/speaker';
 import { getMember } from '../data/team';
 import { usePresenterTimer } from '../hooks/presenterTimer';
@@ -33,7 +33,8 @@ function Clock() {
 export function NotesPanel({ index, step = 0, onClose }: { index: number; step?: number; onClose: () => void }) {
   const m = useMotionPreset();
   const scene = scenes[index];
-  const notes = useMemo(() => getSceneNotes(scene.id), [scene.id]);
+  const part = partAt(index, step);
+  const notes = useMemo(() => getSceneNotes(part), [part]);
   const speaker = getMember(speakerFor(scene, step));
   const next = notes.nextSpeakerId ? getMember(notes.nextSpeakerId) : null;
   const nextScene = scenes[index + 1];
@@ -45,7 +46,7 @@ export function NotesPanel({ index, step = 0, onClose }: { index: number; step?:
     const el = firstCurrent.current;
     const box = scrollRef.current;
     if (el && box) box.scrollTo({ top: Math.max(0, el.offsetTop - 120), behavior: m.reduced ? 'auto' : 'smooth' });
-  }, [scene.id, m.reduced]);
+  }, [part, m.reduced]);
 
   const firstIndex = notes.paragraphs.findIndex((p) => p.current);
 

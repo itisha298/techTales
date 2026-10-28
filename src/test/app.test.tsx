@@ -54,7 +54,7 @@ describe('presentation shell', () => {
     expect(screen.getByRole('dialog', { name: /chapter overview/i })).toBeInTheDocument();
     fireEvent.click(screen.getAllByRole('button', { name: /june 28/i })[0]);
     await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
-    expect(window.location.hash).toBe('#june-28');
+    expect(window.location.hash).toBe('#value');
   });
 
   it('opens the chapter menu with M and the timer with T', async () => {
@@ -69,7 +69,7 @@ describe('presentation shell', () => {
   it('announces the current scene', async () => {
     render(<App />);
     await key('ArrowRight');
-    expect(screen.getByText(/^Scene 2 of 10: The journey\. Speaker: Mayank Jain\./)).toBeInTheDocument();
+    expect(screen.getByText(/^Scene 2 of 6: The journey and context\. Speaker: Mayank Jain\./)).toBeInTheDocument();
   });
 
   it('opens Q&A and the assessment panel from the final ask', async () => {
