@@ -5,7 +5,7 @@
     "brand": "Meridian Telecom",
     "title": "A New Prime Meridian",
     "subtitle": "One brand, one platform, and every customer carried across by June 2027",
-    "disclaimer": "Hypothetical scenarios, figures and dates for illustrative discussion.",
+    "disclaimer": "Every transformation is a promise: Accenture and Meridian, turning trust into success.",
     "presentedBy": "Accenture",
     "teamName": "Meridian Wizards"
   },
@@ -18,7 +18,10 @@
     "name": "Meridian",
     "fullName": "Meridian Telecom",
     "tom": "Tom",
-    "john": "John"
+    "john": "Jennie",
+    "marcus": "Marcus",
+    "marcusFullName": "Marcus Reid",
+    "marcusRole": "Chief Commercial Officer, Meridian Telecom"
   },
   "scenes": {
     "opening": {
@@ -150,8 +153,13 @@
         },
         {
           "who": "{tom}",
-          "title": "A next-gen platform",
-          "detail": "Aligned to Meridian's future business model"
+          "title": "Retention at a sensible cost",
+          "detail": "A lower cost of onboarding and keeping customers"
+        },
+        {
+          "who": "Marcus",
+          "title": "No customer lost",
+          "detail": "Revenue protected, brand intact in the move to EGW"
         }
       ]
     },
@@ -349,7 +357,7 @@
     },
     {
       "topic": "Client stakeholder names",
-      "current": "Shown as {tom} and {john}",
+      "current": "Shown as {tom}, {john} and {marcus}",
       "where": "client in src/content/editable/presentation.json"
     },
     {

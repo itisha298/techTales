@@ -49,13 +49,13 @@ export type RawContent = Record<EditableFile, unknown>;
 /* Placeholders: {goLive}, {assessmentDuration}, …                     */
 /* ------------------------------------------------------------------ */
 
-export const PLACEHOLDERS = ['goLive', 'assessmentDuration', 'proofOfConceptDuration', 'teamName', 'tom', 'john', 'brand', 'client'] as const;
+export const PLACEHOLDERS = ['goLive', 'assessmentDuration', 'proofOfConceptDuration', 'teamName', 'tom', 'john', 'marcus', 'brand', 'client'] as const;
 const TOKEN = /\{([A-Za-z]+)\}/g;
 
 export function placeholderValues(presentation: {
   settings: { goLive: string; assessmentDuration: string; proofOfConceptDuration: string };
   experience: { teamName: string; brand: string };
-  client: { tom: string; john: string; name: string };
+  client: { tom: string; john: string; marcus: string; name: string };
 }): Record<string, string> {
   return {
     goLive: presentation.settings.goLive,
@@ -65,6 +65,7 @@ export function placeholderValues(presentation: {
     brand: presentation.experience.brand,
     tom: presentation.client.tom,
     john: presentation.client.john,
+    marcus: presentation.client.marcus,
     client: presentation.client.name,
   };
 }
@@ -135,7 +136,7 @@ export const RULES: Record<EditableFile, Rule> = {
       teamName: text(),
     }),
     settings: obj({ assessmentDuration: text(), proofOfConceptDuration: text(), goLive: text() }),
-    client: obj({ name: text(), fullName: text(), tom: text(), john: text() }),
+    client: obj({ name: text(), fullName: text(), tom: text(), john: text(), marcus: text(), marcusFullName: text(), marcusRole: text() }),
     scenes: { k: 'record', keys: SCENE_IDS, of: SCENE_ENTRY, exact: true },
     screens: obj({
       opening: obj({ label: text(), cta: text(), hint: text(), hintTouch: text(), teamLabel: text() }),
@@ -151,7 +152,7 @@ export const RULES: Record<EditableFile, Rule> = {
         lead: text(),
         timeline: obj({ start: text(), end: text(), endLabel: text(), span: text() }),
         workstreams: list(obj({ title: text(), detail: text() }), { length: 3 }),
-        priorities: list(obj({ who: text(), title: text(), detail: text() }), { length: 2 }),
+        priorities: list(obj({ who: text(), title: text(), detail: text() }), { length: 3 }),
       }),
       challenge: obj({
         eyebrow: text(),

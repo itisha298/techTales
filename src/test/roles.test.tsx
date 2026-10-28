@@ -51,7 +51,7 @@ describe('speaker roles', () => {
 
   it('keeps the word-for-word transcript (old role wording inside speeches is untouched)', async () => {
     const { speeches } = await import('../content/speakerNotes');
-    expect(speeches.mayank!.paragraphs.some((p) => p.text.includes('Sushant, our Delivery & Innovation Lead'))).toBe(true);
+    expect(speeches.mayank!.paragraphs.some((p) => p.text.includes('Sushant, our Delivery and Innovation Lead'))).toBe(true);
   });
 });
 

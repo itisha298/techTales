@@ -108,7 +108,7 @@ export default function ContextScene() {
         <Timeline />
       </Reveal>
 
-      <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-[calc(5*var(--u))]">
+      <div className="grid gap-8 lg:grid-cols-[1fr_1.9fr] lg:gap-[calc(4*var(--u))]">
         <Reveal delay={TL_START + TL_DUR} className="border-t-2 border-ink pt-[clamp(12px,calc(1.2*var(--u)),24px)]">
           <p className="t-eyebrow text-deep">{exposure.label}</p>
           <p className="mt-2 flex items-baseline gap-3">
@@ -126,7 +126,7 @@ export default function ContextScene() {
           <p className="t-small mt-2 max-w-[56ch] text-muted">{exposure.qualifier}</p>
         </Reveal>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-3 sm:gap-[calc(2.2*var(--u))]">
           {priorities.map((p, i) => (
             <Reveal
               key={p.title}

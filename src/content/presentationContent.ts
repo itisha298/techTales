@@ -35,7 +35,7 @@ interface PresentationFile {
     teamName: string;
   };
   settings: { assessmentDuration: string; proofOfConceptDuration: string; goLive: string };
-  client: { name: string; fullName: string; tom: string; john: string };
+  client: { name: string; fullName: string; tom: string; john: string; marcus: string; marcusFullName: string; marcusRole: string };
   scenes: Record<
     SceneId,
     {

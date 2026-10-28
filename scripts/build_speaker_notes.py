@@ -58,6 +58,9 @@ def scene_for(speaker, i):
 
 
 def main():
+    import sys
+    if "--from-docx" not in sys.argv:
+        sys.exit("Refusing to overwrite speeches. Speeches were updated by hand; pass --from-docx to regenerate from the DOCX.")
     data = parse()
     with open(OUT, encoding="utf-8") as f:
         notes = json.load(f)

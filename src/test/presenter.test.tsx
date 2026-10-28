@@ -103,7 +103,7 @@ describe('rehearsal mode', () => {
 describe('content is unchanged by presenter features', () => {
   it('keeps the configurable ambiguities at their current values', () => {
     expect(content.settings.assessmentDuration).toBe('two-week');
-    expect(content.client).toMatchObject({ tom: 'Tom', john: 'John' });
+    expect(content.client).toMatchObject({ tom: 'Tom', john: 'Jennie', marcus: 'Marcus' });
     expect(content.june28.question).toBe('The real question is what becomes possible the day after.');
   });
 });

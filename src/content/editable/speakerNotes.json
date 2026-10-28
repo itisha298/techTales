@@ -5,19 +5,15 @@
       "paragraphs": [
         {
           "scene": "opening",
-          "text": "Good morning Tom, good morning John – thank you for making time for us today. (Pause.)"
+          "text": "Good morning Tom, Jennie, Marcus – thank you for making time for us today. (Pause.)"
         },
         {
           "scene": "opening",
-          "text": "Warren Buffett is often quoted as saying that it takes twenty years to build a reputation and five minutes to ruin it. Meridian has spent years earning its customers' trust. Over the next six months, as mobility moves into the EGW sub-brand, that trust either carries over or it is at risk."
-        },
-        {
-          "scene": "opening",
-          "text": "I know how much is on your plate right now, so we will keep this focused and make every minute count."
+          "text": "Warren Buffett is often quoted as saying that it takes twenty years to build a reputation and five minutes to ruin it. Marcus, you carry Meridian’s reputation in front of customers every day. Over the next six months, as mobility moves into the EGW sub-brand, that trust either carries over or it is at risk."
         },
         {
           "scene": "context",
-          "text": "When Tom and I spoke recently, three things stood out. First, Meridian is retiring its corporate mobile brand and moving all mobility into the EGW sub-brand – which means a brand-new Salesforce platform for CRM, assisted ordering and self-service has to be built from the ground up, and integrated with Siebel, Oracle and BRM."
+          "text": "When Tom and I spoke recently, three things stood out. First, Meridian is retiring its corporate mobile brand and moving all mobility into the EGW sub-brand – which means a brand-new Salesforce platform for CRM, assisted ordering and self-service, integrated with Siebel, Oracle and BRM."
         },
         {
           "scene": "context",
@@ -33,23 +29,23 @@
         },
         {
           "scene": "context",
-          "text": "John, I know your priority is a transformation with zero disruption and green SLAs across every vendor. Tom, yours is a next-gen platform that is aligned to Meridian's future business model. Today is about showing how we can help you deliver both."
+          "text": "Marcus, in plain terms: this is the platform your customers will see and your teams will sell on. Your priority is simple: no customer lost in the move, revenue protected and the brand intact. Jennie, yours is zero disruption and green SLAs across every vendor. Tom, yours is a next-gen platform for Meridian’s future business model. Today is about showing how we can deliver all three."
         },
         {
           "scene": "journey",
-          "text": "Here is how we will use the time. I will hand over to Sushant, our Delivery & Innovation Lead, who will show how AI-led delivery with GenWizard and myWizard can de-risk and accelerate this program. Neeti, who leads a peer telco program, will share a real story of how we solved a very similar challenge – and the value it created. Suryakant, our Market Lead, will then bring it together: why Accenture, and why now. And Aryama, our Client Engagement Lead, will make sure we leave plenty of room for your questions and concerns."
+          "text": "Here is how we will use the time. Sushant, our Delivery and Innovation Lead, will show how AI-led delivery can reduce risk and speed this up. Neeti, who leads a peer telco program, will share a real story of what we did for a similar client’s customers. Suryakant, our Market Lead, will bring it together with one clear recommendation. And Aryama, our Client Engagement Lead, will keep plenty of room for your questions."
         },
         {
           "scene": "journey",
-          "text": "By the end of this conversation, we hope to agree on one simple next step – an initial assessment with you and your key stakeholders, so we can build a plan together that protects your customers and meets the June-27 commitment."
+          "text": "By the end, we hope to agree one simple next step – an initial assessment with you and your key stakeholders, so we can build a plan together that protects your customers and meets the June-27 commitment."
         },
         {
           "scene": "context",
-          "text": "With that, let me hand over to Sushant to talk about innovation."
+          "text": "With that, over to Sushant."
         }
       ],
       "deliveryTips": [
-        "Pause after the Buffett quote and after the Siebel joke. Say the joke deadpan, and look at John.",
+        "Pause after the Buffett quote and after the Siebel joke. Say the joke deadpan, and look at Jennie.",
         "Keep “often quoted as saying”: the line is widely attributed to Buffett, but its exact origin is debated."
       ]
     },
@@ -57,155 +53,99 @@
       "paragraphs": [
         {
           "scene": "innovation-challenge",
-          "text": "Thank you, Mayank. Every Siebel estate has a ghost: a rule nobody remembers writing, still running quietly, and occasionally billing. Let me tell you how we caught one. (Pause. Smile.)"
+          "text": "Every Siebel estate has a ghost: a rule nobody remembers writing, still running quietly, and occasionally billing. (Pause. Smile.)"
         },
         {
           "scene": "innovation-challenge",
-          "text": "Tom, you are being asked to stand up a new Salesforce platform in six months, on top of a Siebel and BRM estate nobody has fully written down. Every week spent working out what the old system does is a week taken from building and testing the new one."
+          "text": "Tom, Jennie, Marcus, you are standing up a new Salesforce platform in six months, on top of systems nobody has fully written down. In plain terms: nobody has a complete list of the rules that decide what each customer is charged."
         },
         {
           "scene": "innovation-challenge",
-          "text": "We saw something very similar with Daniel, Head of Digital Delivery at a large Asia-Pacific mobile operator, whom we met at a telecom forum in Singapore in March 2026. He had 26 weeks to replace his Siebel-based ordering and care front end with Salesforce, against a date that could not move."
+          "text": "We saw the same with Daniel, Head of Digital Delivery at a large Asia-Pacific mobile operator, whom we met at MWC Shanghai in June 2026. He had 26 weeks, 1,400 order workflows and 600 pricing rules. The plan allowed five weeks to document them; the work needed twelve. Seven weeks that did not exist."
         },
         {
           "scene": "innovation-challenge",
-          "text": "His estate held 1,400 order workflows and 600 pricing rules, run by three vendors. The plan allowed five weeks for requirements; the workshops needed twelve. Every night he did the same arithmetic and got the same answer: seven weeks that did not exist."
-        },
-        {
-          "scene": "innovation-challenge",
-          "text": "He could hire thirty more analysts, or rebuild the old system as it was. Neither worked. The knowledge was buried in code written by people who had left."
-        },
-        {
-          "scene": "innovation-challenge",
-          "text": "Grace Hopper, the computing pioneer, famously warned that the most dangerous phrase in the language is “We’ve always done it this way.” A straight rebuild would have copied years of workarounds into the new platform. (Pause.)"
-        },
-        {
-          "scene": "innovation-challenge",
-          "text": "Then, in week three, a billing analyst found, by accident, an undocumented discount that would have mispriced 50,000 customers. If one rule like that was hiding, how many more? (Pause.)"
+          "text": "More analysts or a straight rebuild would not work: the knowledge was buried in code written by people who had left. Grace Hopper warned that the most dangerous phrase in the language is “We’ve always done it this way.” Then a billing analyst found, by accident, an undocumented discount that would have put 50,000 customers on the wrong bill. (Pause.) Marcus, that is 50,000 customers, under a brand you are about to launch. If one rule was hiding, how many more?"
         },
         {
           "scene": "innovation-solution",
-          "text": "So we ran a two-week proof of concept, inside his secure environment, on 150 workflows and 60 rate plans. GenWizard read the Siebel and BRM configuration and drafted each rule in plain business language, linked to its exact source, with a proposed Salesforce configuration and test cases. His experts accepted, edited or rejected every draft. And myWizard put all three vendors on one control tower."
+          "text": "We built four things."
         },
         {
           "scene": "innovation-solution",
-          "text": "Eight in ten drafts were accepted with light edits. Discovery took five weeks, not twelve, and hidden rules surfaced in month one instead of at user testing. The AI decided nothing: Daniel’s own Siebel architect chose which rules to keep, change or retire."
+          "text": "First, our AI assistant, GenWizard, reads the old systems and drafts every rule in plain business language, linked to its source. Daniel’s experts accepted, edited or rejected each one."
         },
         {
           "scene": "innovation-solution",
-          "text": "Tom, you do not need more people to meet June 2027. You need to see your own estate sooner. The tools do the reading, and your experts do the judging."
+          "text": "Second, data you can trust. We reconcile customer, order and billing data across the systems before anything moves. The AI runs inside your environment, your people review every output, and no data is lost or exposed."
         },
         {
           "scene": "innovation-solution",
-          "text": "John, you get a live view across every vendor, and you are the person who decides which rules matter."
+          "text": "Third, myWizard gives every vendor one control tower: scope, dependencies and test status, with a clear RACI and a speed target for each activity."
         },
         {
           "scene": "innovation-solution",
-          "text": "So we would like to start with a two-week proof of concept on a sample of Meridian’s estate, inside your environment. Neeti will now share a different kind of story: what happens when business and IT look at the same customer."
+          "text": "Fourth, speed. Thin releases with automated quality checks, so problems surface in month one, not at go-live."
+        },
+        {
+          "scene": "innovation-solution",
+          "text": "For Daniel, discovery took five weeks, not twelve. His own architect decided which rules to keep. The AI decided nothing."
+        },
+        {
+          "scene": "innovation-solution",
+          "text": "Marcus, what does that mean for your customers? The right bill, from day one, under the new brand. Tom, you do not need more people to meet June 2027; you need to see your estate sooner. Jennie, you get a live view across every vendor."
+        },
+        {
+          "scene": "innovation-solution",
+          "text": "So we would like to start with a two-week proof of concept on a sample of Meridian’s estate, inside your environment. Neeti will now share what happens when business and IT look at the same customer."
         }
       ],
       "deliveryTips": [
         "Deliver the opening joke deadpan and wait for the smile. It sets up the hidden-rule idea that pays off later.",
-        "Slow down on the Hopper quote and look at John; it is the point where Daniel’s plan has to change."
+        "Slow down on the Hopper quote and look at Jennie; it is the point where Daniel’s plan has to change."
       ]
     },
     "neeti": {
       "paragraphs": [
         {
           "scene": "value",
-          "text": "“What if Meridian could meet its June-27 commitment without asking customers to choose between continuity today and a better digital experience tomorrow?”"
+          "text": "“What if Meridian could meet its June-27 commitment without asking customers to choose between continuity today and a better digital experience tomorrow?” Tom, Jennie, Marcus, that is the opportunity in front of you."
         },
         {
           "scene": "value",
-          "text": "Tom, that is the opportunity in front of you."
+          "text": "This is more than retiring a brand and implementing Salesforce. It is a chance to protect customer trust and revenue, and build Meridian’s digital foundation for growth."
         },
         {
           "scene": "value",
-          "text": "This is more than retiring the corporate mobile brand and implementing Salesforce. It is an opportunity to protect customer trust and revenue through a complex transition, while creating Meridian’s digital foundation for future growth."
+          "text": "In six months you must build Salesforce, integrate Siebel, Oracle and BRM, migrate mobility customers and coordinate multiple vendors. One failed customer journey could hit service and confidence, and up to $3.54 billion in revenue is exposed."
         },
         {
           "scene": "value",
-          "text": "Meridian already has a valuable mobility business. Now you need to build Salesforce from scratch, integrate it with Siebel, Oracle and BRM, migrate mobility customers, and coordinate multiple vendors, all within six months."
+          "text": "So the biggest opportunity is not Salesforce alone. It is one connected prospect-to-cash experience, with a control tower that gives everyone a common view of journeys, releases, dependencies and risk."
         },
         {
           "scene": "value",
-          "text": "And the stakes are high."
+          "text": "Marcus, this is where your world and Tom’s meet. Today, what Sales commits and what Service can deliver are not always the same. A plan sold as active in three hours that takes six is a broken promise, and the customer feels it. One shared view fixes that, and keeps your pricing and package decisions profitable once servicing costs are counted."
         },
         {
           "scene": "value",
-          "text": "A failed customer journey, late integration issue, or migration problem could impact service, SLAs and customer confidence. Based on the figures provided, up to $3.54 billion in revenue is exposed."
+          "text": "We have seen this work. In a comparable Salesforce program, Accenture supported more than 1,000 users across APAC, EMEA and the US, with 16-week releases over 18 months. The lesson was simple: do not wait for the final migration to find out whether it works. Validate early, learn quickly and scale with confidence."
         },
         {
           "scene": "value",
-          "text": "That is why we believe the biggest opportunity is not Salesforce alone."
+          "text": "For Meridian, we would first identify the customer journeys that simply cannot fail. Then make every dependency visible. Then deliver thin, testable releases with automated quality checks, under one-team governance across Meridian and its partners."
         },
         {
           "scene": "value",
-          "text": "It is creating one digitally enabled prospect-to-cash experience, supported by a transformation control tower that provides a common view across customer journeys, releases, dependencies, migration, quality and SLA risk."
-        },
-        {
-          "scene": "value",
-          "text": "We have seen the value of that approach before."
-        },
-        {
-          "scene": "value",
-          "text": "In a comparable Salesforce transformation, Accenture supported a complex program that ultimately reached more than 1,000 users across APAC, EMEA and the US, using 16-week progressive releases across an 18-month rollout."
-        },
-        {
-          "scene": "value",
-          "text": "The key lesson was simple:"
-        },
-        {
-          "scene": "value",
-          "text": "Don’t wait until the final migration to discover whether the transformation works. Validate early, learn quickly and scale with confidence."
-        },
-        {
-          "scene": "value",
-          "text": "For Meridian’s compressed timeline, we would apply that lesson by first identifying the customer journeys that simply cannot fail. Then we make the Salesforce, Siebel, Oracle, BRM and migration dependencies visible. From there, we deliver thin, testable releases with automated quality gates, supported by one-team governance across Meridian and its partners."
-        },
-        {
-          "scene": "value",
-          "text": "Accenture brings together telecom experience, Salesforce transformation capability, complex integration expertise, progressive delivery methods, and intelligent delivery using myWizard and GenWizard."
-        },
-        {
-          "scene": "value",
-          "text": "The value goes beyond successful implementation."
-        },
-        {
-          "scene": "value",
-          "text": "It is about protecting revenue and retention, improving order and SLA performance, increasing employee productivity, expanding digital self-service, and establishing a scalable platform for future innovation. That creates Value 360 across Client Value, Technology & Innovation, Talent/People and Sustainability."
+          "text": "The value goes beyond implementation: revenue and retention protected, better order and SLA performance, more self-service, faster launch of new plans. That is Value 360, and it asks for a shift from vendor-by-vendor to shared outcomes."
         },
         {
           "scene": "june-28",
-          "text": "But achieving that requires a shift in behavior too: from vendor-by-vendor management to shared outcomes, from late reporting to early intervention, and from big releases to continuous validation of customer value."
+          "text": "That brings me to the second question: “The question isn’t whether Meridian can go live by June-27. The real question is: can Meridian use June-27 to change what becomes possible on June-28?” Success is reaching June-28 with customers protected, employees empowered, risks under control, and a platform ready for growth."
         },
         {
           "scene": "june-28",
-          "text": "And that brings me to the second question:"
-        },
-        {
-          "scene": "june-28",
-          "text": "“The question isn’t whether Meridian can go live by June-27. The real question is: can Meridian use June-27 to change what becomes possible on June-28?”"
-        },
-        {
-          "scene": "june-28",
-          "text": "Because success is not simply switching systems on."
-        },
-        {
-          "scene": "june-28",
-          "text": "Success is reaching June-28 with customers protected, employees empowered, risks under control, and a digital platform capable of supporting Meridian’s next chapter of growth."
-        },
-        {
-          "scene": "june-28",
-          "text": "So Tom, our recommendation is simple: start with a focused two-week assessment."
-        },
-        {
-          "scene": "june-28",
-          "text": "Bring together business, architecture, security, data, operations, delivery and key vendors. Identify the critical journeys and dependencies, agree the value scorecard, and select the first early-validation release."
-        },
-        {
-          "scene": "june-28",
-          "text": "Let’s not wait for go-live to find out whether the transformation works. Let’s prove what matters most, early."
+          "text": "So our recommendation is simple: start with a focused two-week assessment. Bring together business, technology, data, operations and your key vendors. Identify the critical journeys, agree the value scorecard, and select the first early-validation release. Let’s not wait for go-live to find out whether it works. Let’s prove what matters most, early."
         }
       ],
       "deliveryTips": [
@@ -217,55 +157,35 @@
       "paragraphs": [
         {
           "scene": "assessment",
-          "text": "Tom, John, we understand your context, high-level scope and expectation from the vendor."
+          "text": "Tom, Jennie, Marcus, you have heard our story. Let me finish with what it means and what we propose."
         },
         {
           "scene": "assessment",
-          "text": "So, our commitment is simple: help you on transition of all mobility operations into the EGW (Enterprise, Government, Wholesale) brand within six months, while protecting customer relationships, maintaining service continuity, and building a platform for future growth."
+          "text": "Our commitment is simple: help you move all mobility operations into the EGW brand within six months, while protecting customer relationships, keeping service running and building a platform for future growth."
         },
         {
           "scene": "assessment",
-          "text": "You have heard what we understood and how we work, in detail from Sushant and Neeti."
+          "text": "Marcus, you will ask: so what does this mean for my customers? It means they keep the service they trust, get the right bill, and meet a better digital experience as the new brand arrives, without being asked to choose between the two."
         },
         {
           "scene": "assessment",
-          "text": "This shows our rich Salesforce delivery expertise, our approach to early validation to identify potential issues before they affect customers and maintain the integrity of the prospect-to-cash journey for existing customers throughout the transition."
+          "text": "With Accenture you gain a partner focused not only on delivery milestones, but on the business outcomes they must enable: customers kept, revenue protected, brand intact."
         },
         {
           "scene": "assessment",
-          "text": "With Accenture as your implementation partner, you gain a partner focused not only on delivery milestones, but also on the business outcomes those milestones must enable."
+          "text": "Here is what we would build: a workable solution, not Salesforce for its own sake, though we will show you why Salesforce is the fastest route. One connected journey from first enquiry to payment. Sales and Service working to one definition of “committed”. Clean data across your systems, with AI used safely inside your environment. And one team across every vendor, with a clear RACI and a speed target for each activity."
         },
         {
           "scene": "assessment",
-          "text": "We will bring the execution discipline, structured governance, integration focus, and collaborative delivery approach needed to turn this six-month ambition into a controlled and measurable transformation."
+          "text": "Our recommendation is simple. Before we commit to the full roadmap, start with a focused initial assessment. It answers your hardest questions with evidence: what this costs, whether six months is feasible, and where the risks sit. At the end you will have prioritized risks and dependencies, validated assumptions, a high-level roadmap and clear next steps."
         },
         {
           "scene": "assessment",
-          "text": "So before we commit to the detailed execution roadmap, we recommend starting with a focused initial assessment."
-        },
-        {
-          "scene": "assessment",
-          "text": "Given the ambitious six-month timeline and the complexity of establishing Salesforce, integrating Siebel, Oracle and BRM, and migrating the customer base, we believe the most important first step is to establish a clear understanding of where we stand today and what it will take to deliver this transformation successfully."
-        },
-        {
-          "scene": "assessment",
-          "text": "Our objective is simple: identify the critical risks early, validate the key assumptions, and give you a realistic, evidence-based path to achieving the six-month ambition."
-        },
-        {
-          "scene": "assessment",
-          "text": "So, we propose keeping this assessment time-bound, outcome-focused, and closely aligned with your business priorities."
-        },
-        {
-          "scene": "assessment",
-          "text": "At the end of the assessment, you will have a prioritized view of the risks and dependencies, a validated set of planning assumptions, a high-level delivery roadmap, and clear recommendations on the immediate next steps."
-        },
-        {
-          "scene": "assessment",
-          "text": "Tom, John, our recommendation is to align on the assessment scope, nominate the right business and technology stakeholders, and agree on a short assessment window with clearly defined outputs."
+          "text": "The next step is just as simple. Tom, align on scope and agree a short window. Marcus, nominate one commercial owner for the customer journeys. Jennie, nominate your technology lead."
         },
         {
           "scene": "qa",
-          "text": "Would you be comfortable sponsoring this initial assessment so that we can validate the critical assumptions, expose the key risks early, and establish the strongest possible foundation for your six-month transition to the EGW brand with confidence?"
+          "text": "Tom, Marcus, Jennie, would you be comfortable sponsoring this initial assessment, so we can build a foundation you can trust for your six-month move to EGW?"
         }
       ],
       "deliveryTips": [
@@ -280,19 +200,19 @@
       "pauses": [
         "After the opening greeting",
         "After the Buffett quote",
-        "After the Siebel joke: say it deadpan and look at John"
+        "After the Siebel joke: say it deadpan and look at Jennie"
       ],
-      "handoverLine": "With that, let me hand over to Sushant to talk about innovation.",
+      "handoverLine": "With that, over to Sushant.",
       "nextSpeakerId": "sushant"
     },
     "sushant": {
       "duration": "about 3 min",
       "pauses": [
         "After the opening joke: wait for the smile",
-        "After the Hopper quote: slow down and look at John",
+        "After the Hopper quote: slow down and look at Jennie",
         "After “If one rule like that was hiding, how many more?”"
       ],
-      "handoverLine": "Neeti will now share a different kind of story: what happens when business and IT look at the same customer.",
+      "handoverLine": "Neeti will now share what happens when business and IT look at the same customer.",
       "nextSpeakerId": "neeti"
     },
     "neeti": {
@@ -336,7 +256,7 @@
     },
     "context": {
       "cues": [
-        "Deliver the three things that stood out, then the priorities for John and Tom.",
+        "Deliver the three things that stood out, then the priorities for Jennie and Tom.",
         "End with the handover to Sushant."
       ],
       "timingGuidance": "About 1 min 50 sec. Mayank’s total: about 3 min 25 sec."
@@ -384,7 +304,7 @@
       "cues": [
         "Suryakanta asks the final question (below), then stops talking and lets Tom answer.",
         "Use “Open Q&A” (or press →) to hand over to Aryama.",
-        "Use “Explore the assessment” if Tom or John ask what the assessment involves.",
+        "Use “Explore the assessment” if Tom or Jennie ask what the assessment involves.",
         "No scripted speech for Aryama in the source. Source role: “make sure we leave plenty of room for your questions and concerns.”"
       ],
       "timingGuidance": "Remaining time in the 20-minute slot (about 7 minutes)."

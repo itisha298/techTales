@@ -28,7 +28,7 @@ describe('content fidelity guards', () => {
   });
 
   it('carries the disclaimer', () => {
-    expect(content.experience.disclaimer).toBe('Hypothetical scenarios, figures and dates for illustrative discussion.');
+    expect(content.experience.disclaimer).toBe('Every transformation is a promise: Accenture and Meridian, turning trust into success.');
   });
 
   it('never places full speech paragraphs in audience-facing content', () => {
