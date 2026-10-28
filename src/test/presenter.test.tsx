@@ -9,10 +9,11 @@ import { getMember } from '../data/team';
 const key = (k: string) => act(() => void fireEvent.keyDown(window, { key: k }));
 
 describe('speaker handover', () => {
-  it('maps the final ask to Suryakanta and the Q&A build to Aryama', () => {
+  it('Scene 10 is presented by Aryama in both builds; Scene 9 stays with Suryakanta', () => {
     const qa = scenes[sceneIndexById.qa];
-    expect(speakerFor(qa, 0)).toBe('suryakanta');
+    expect(speakerFor(qa, 0)).toBe('aryama');
     expect(speakerFor(qa, 1)).toBe('aryama');
+    expect(speakerFor(scenes[sceneIndexById.assessment], 0)).toBe('suryakanta');
     expect(speakerFor(scenes[sceneIndexById.context], 0)).toBe('mayank');
   });
 

@@ -96,11 +96,7 @@
       "speakerId": "aryama",
       "plannedSeconds": 440,
       "centralMessage": "Would you be comfortable sponsoring the initial assessment?",
-      "visualTreatment": "The ask, then a calm purple Q&A screen with Aryama.",
-      "stepSpeakers": [
-        "suryakanta",
-        "aryama"
-      ]
+      "visualTreatment": "The ask, then a calm purple Q&A screen with Aryama."
     }
   },
   "screens": {
