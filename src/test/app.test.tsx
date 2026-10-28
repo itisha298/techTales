@@ -18,7 +18,7 @@ describe('presentation shell', () => {
     await key('ArrowLeft');
     expect(window.location.hash).toBe('#journey');
     await key('End');
-    expect(window.location.hash).toBe('#qa');
+    expect(window.location.hash).toBe('#team');
     await key('Home');
     expect(window.location.hash).toBe('#opening');
   });

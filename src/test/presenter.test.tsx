@@ -21,9 +21,7 @@ describe('speaker handover', () => {
     window.location.hash = '#context';
     render(<App />);
     expect(screen.queryByTestId('handover')).not.toBeInTheDocument();
-    await key('ArrowRight'); // context (Mayank) → team introduction (Mayank): no handover
-    expect(screen.queryByTestId('handover')).not.toBeInTheDocument();
-    await key('ArrowRight'); // team introduction (Mayank) → challenge (Sushant)
+    await key('ArrowRight'); // context (Mayank) → challenge (Sushant)
     const cue = await screen.findByTestId('handover');
     expect(cue).toHaveTextContent('Now speaking');
     expect(cue).toHaveTextContent('Sushant');
@@ -77,7 +75,7 @@ describe('rehearsal mode', () => {
     expect(screen.getByTestId('rehearsal-badge')).toHaveTextContent(/not live/i);
     expect(panel).toHaveTextContent('This window is isolated');
     // grouped by speaker with plan totals
-    expect(within(panel).getByRole('rowheader', { name: 'Mayank Jain' })).toBeInTheDocument();
+    expect(within(panel).getAllByRole('rowheader', { name: 'Mayank Jain' }).length).toBeGreaterThan(0);
     expect(panel).toHaveTextContent('20:00');
     await key('r');
     await waitFor(() => expect(screen.queryByRole('complementary', { name: 'Rehearsal timing' })).not.toBeInTheDocument());

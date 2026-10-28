@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const SCENES = ['opening', 'journey', 'context', 'team', 'innovation-challenge', 'innovation-solution', 'value', 'june-28', 'assessment', 'qa'];
+const SCENES = ['opening', 'journey', 'context', 'innovation-challenge', 'innovation-solution', 'value', 'june-28', 'assessment', 'qa', 'team'];
 
 /** Snapshot of every continuous-animation element in the active scene. */
 const sampleLoops = (page: Page) =>
@@ -149,7 +149,7 @@ test.describe('presenter features', () => {
     // The newcomer adopts the audience position.
     await expect(presenter.locator('section[data-scene]')).toHaveAttribute('data-scene', 'context');
     await presenter.keyboard.press('ArrowRight');
-    await expect(audience.locator('section[data-scene]')).toHaveAttribute('data-scene', 'team');
+    await expect(audience.locator('section[data-scene]')).toHaveAttribute('data-scene', 'innovation-challenge');
     await audience.keyboard.press('ArrowLeft');
     await expect(presenter.locator('section[data-scene]')).toHaveAttribute('data-scene', 'context');
   });
@@ -172,7 +172,7 @@ test.describe('presenter features', () => {
     await rehearse.goto('/?sync=1&rehearsal=1#context');
     await expect(rehearse.getByTestId('rehearsal-badge')).toBeVisible();
     await rehearse.keyboard.press('ArrowRight');
-    await expect(rehearse.locator('section[data-scene]')).toHaveAttribute('data-scene', 'team');
+    await expect(rehearse.locator('section[data-scene]')).toHaveAttribute('data-scene', 'innovation-challenge');
     await audience.waitForTimeout(800);
     await expect(audience.locator('section[data-scene]')).toHaveAttribute('data-scene', 'context');
     await expect(audience.getByTestId('rehearsal-badge')).toHaveCount(0);
